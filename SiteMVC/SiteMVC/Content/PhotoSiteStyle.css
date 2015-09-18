@@ -1,0 +1,220 @@
+﻿/**, *:before, *:after
+{
+    /* Chrome 9-, Safari 5-, iOS 4.2-, Android 3-, Blackberry 7- */
+    /*-webkit-box-sizing: border-box;
+    /* Firefox (desktop or Android) 28- */
+   /* -moz-box-sizing: border-box;
+    /* Firefox 29+, IE 8+, Chrome 10+, Safari 5.1+, Opera 9.5+, iOS 5+, Opera Mini Anything, Blackberry 10+, Android 4+ */
+   /* box-sizing: border-box;
+}*/
+
+html {
+    padding-top: 0px;
+}
+
+body
+{
+    background: #f5f5f5;
+    font-family: "Candara";
+    text-align: center;
+    padding-top: 0px; 
+}
+
+header {
+    display: block; /* Для старых браузеров */
+    height: 330px; /* Высота шапки */
+    background: url(../Portfolio/main.jpg) no-repeat center top;
+    background-size: 100%;
+    text-align: left;
+    width: 100%;
+    padding: 212px 0px 0px 7%;
+    color: gray;
+    font-size: 28px;
+}
+
+header a img {
+    width: 50%;
+    margin-top: -50px;
+}
+
+footer {
+    background: url(../Portfolio/main.jpg) no-repeat center bottom;
+    background-size: 100%;
+    height: 100px; /* Высота низа */
+}
+
+header h2 {
+    margin-top: 0px;
+    font-size: 70px;
+}
+
+nav.menu
+{
+    display: table-cell;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+nav.menu .menu-item
+{
+    margin: 0 10px;
+    display: inline-block;
+}
+
+nav.menu .menu-item.separator
+{
+    padding: 0px;
+    margin: 0px -2px;
+    color: gray;
+}
+
+.menu ul
+{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+.container {
+    width: 86%;
+    padding: 0px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    font-style: normal;
+    text-decoration: none;
+    color: black  !important;
+}
+
+a:active, a:focus {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.active > a
+{
+    color: black !important;
+}
+
+nav.menu
+{
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+.menu
+{
+    display: block;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+
+a img
+{
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.albumItem {
+    font-family: "Chaparral Pro Light";
+    font-size: 22px;
+}
+
+.albumDescription {
+    width: 950px;
+    margin: 20px 0;
+    font-size: 20px;
+    text-align: left;
+    text-indent: 1.5em;
+    margin-top: 0;
+}
+
+.photo-horizontal {
+    display: block;
+    max-width: 1020px;
+    margin: 20px auto;
+}
+.photo-vertical {
+    display: block;
+    max-height: 1020px;
+    margin: 20px auto;
+}
+
+#up {
+
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    right: 13px;
+    border-radius: 30px;
+    z-index: 1001;
+    background: #ffffff url("../Content/images/gotop.png") center center no-repeat;
+}
+#up:hover {
+    cursor: pointer;
+}
+
+.pPageScroll {
+    color: #ffffff;
+    font: bold 12pt 'Comic Sans MS';
+    text-align: center;
+}
+
+#vk_groups {
+    display: block;
+    width: 500px; /* Ширина элемента в пикселах */
+    padding: 10px;
+    margin: auto; /* Выравниваем по центру */
+
+}
+
+img:hover
+{
+    filter: none; /* IE6-9 */
+    -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+.gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    border: none !important;
+    background: transparent;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+}
+/**
+ * Social Share
+ */
+.social-box {
+	text-align: center;
+    display: inline-block;
+	height: 60px;
+	margin-right: 8px;
+	vertical-align: top;
+	letter-spacing: 0;
+    padding: 9px 20px 17px 20px;
+
+
+}
+
