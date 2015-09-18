@@ -6,7 +6,6 @@ namespace SiteMVC.Areas._Default.Controllers
 {
     public class HomeController : Controller
     {
-        //
         // GET: /_Default/Home/
 
         public ActionResult Home()
@@ -19,7 +18,7 @@ namespace SiteMVC.Areas._Default.Controllers
 
             ViewBag.Photos = photos;
 
-            return View();
+            return View("Home");
         }
 
 
