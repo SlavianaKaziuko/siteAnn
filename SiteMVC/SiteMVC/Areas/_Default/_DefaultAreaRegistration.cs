@@ -31,9 +31,10 @@ namespace SiteMVC.Areas._Default
                 "_Default/Portfolio/{action}/{id}",
                 new { controller = "Portfolio", action = "Portfolio", id = UrlParameter.Optional });
             context.MapRoute(
-                "_Default_default",
-                "_Default/{controller}/{action}/{id}",
-                new { action = "Home", id = UrlParameter.Optional });
+                "_Default",
+                "{controller}/{action}/{id}",
+                new { controller = "Home", action = "Home", id = UrlParameter.Optional });
+
         }
     }
 }
