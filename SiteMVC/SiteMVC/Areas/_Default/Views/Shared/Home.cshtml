@@ -11,8 +11,8 @@
     @foreach (PhotoItem photo in ViewBag.Photos)
     {
         <div class="col-md-3 col-sm-4 col-xs-6">
-            <a class="thumbnail fancybox" rel="ligthbox" href="@photo.Path">
-                <img class="img-responsive" src="@photo.Path" />
+            <a class="thumbnail"  onclick="">
+                <img alt="@photo.Name" src="@photo.Path" />
             </a>
         </div>
     }

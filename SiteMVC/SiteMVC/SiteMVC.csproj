@@ -203,6 +203,7 @@
     <Content Include="Content\PhotoSwipe-master\website\_includes\menu.html" />
     <Content Include="Content\PhotoSwipe-master\website\_layouts\default.html" />
     <Content Include="Content\vk.png" />
+    <Content Include="Content\vk_back.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -376,7 +377,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56448</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56448/</IISUrl>
+          <IISUrl>http://localhost:56400/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

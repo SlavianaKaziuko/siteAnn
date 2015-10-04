@@ -15,19 +15,19 @@ namespace SiteMVC.Areas._Default
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Services",
+                "Services_Default",
                 "_Default/Services/{action}/{id}",
                 new { controller = "Services", action = "Services", id = UrlParameter.Optional });
             context.MapRoute(
-                "Contacts",
+                "Contacts_Default",
                 "_Default/Contacts/{action}/{id}",
                 new { controller = "Contacts", action = "Contacts", id = UrlParameter.Optional });
             context.MapRoute(
-                "Responses",
+                "Responses_Default",
                 "_Default/Responses/{action}/{id}",
                 new { controller = "Responses", action = "Responses", id = UrlParameter.Optional });
             context.MapRoute(
-                "Portfolio",
+                "Portfolio_Default",
                 "_Default/Portfolio/{action}/{id}",
                 new { controller = "Portfolio", action = "Portfolio", id = UrlParameter.Optional });
             context.MapRoute(
