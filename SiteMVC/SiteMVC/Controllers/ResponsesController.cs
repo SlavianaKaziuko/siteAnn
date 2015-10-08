@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace SiteMVC.Areas._Default.Controllers
+namespace SiteMVC.Controllers
 {
     public class ResponsesController : Controller
     {
         //
-        // GET: /_Default/Responses/
+        // GET: /Responses/
 
         public ActionResult Responses()
         {
@@ -19,7 +15,7 @@ namespace SiteMVC.Areas._Default.Controllers
                 return PartialView("Responses");
             }
 
-            ViewBag.Layout = "~/Areas/_Default/Views/_Layout.cshtml";
+            ViewBag.Layout = "~/Views/_Layout.cshtml";
             return View();
         }
 

@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using System.Xml;
-using SiteMVC.Areas._Default.Models;
 using SiteMVC.Constants;
+using SiteMVC.Models;
 
-namespace SiteMVC.Areas._Default.Controllers
+namespace SiteMVC.Controllers
 {
     public class PortfolioController : Controller
     {
         //
-        // GET: /_Default/Portfolio/
+        // GET: /Portfolio/
 
         public ActionResult Portfolio()
         {
@@ -48,8 +47,8 @@ namespace SiteMVC.Areas._Default.Controllers
                 ViewBag.Layout = null; 
                 return PartialView("Portfolio");
             }
-            
-            ViewBag.Layout = "~/Areas/_Default/Views/_Layout.cshtml";
+
+            ViewBag.Layout = @"~/Views/_Layout.cshtml";
             return View();
         }
 

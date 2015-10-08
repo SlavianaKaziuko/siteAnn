@@ -1,11 +1,11 @@
 ﻿using System.Web.Mvc;
 
-namespace SiteMVC.Areas._Default.Controllers
+namespace SiteMVC.Controllers
 {
     public class ServicesController : Controller
     {
         //
-        // GET: /_Default/Services/
+        // GET: /Services/
 
         public ActionResult Services()
         {
@@ -15,7 +15,7 @@ namespace SiteMVC.Areas._Default.Controllers
                 return PartialView("Services");
             }
 
-            ViewBag.Layout = "~/Areas/_Default/Views/_Layout.cshtml";
+            ViewBag.Layout = "~/Views/_Layout.cshtml";
             return View();
         }
 

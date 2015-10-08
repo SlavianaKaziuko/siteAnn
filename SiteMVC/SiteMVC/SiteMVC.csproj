@@ -121,15 +121,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\_Default\Controllers\ContactsController.cs" />
-    <Compile Include="Areas\_Default\Controllers\HomeController.cs" />
-    <Compile Include="Areas\_Default\Controllers\PortfolioController.cs" />
-    <Compile Include="Areas\_Default\Controllers\ResponsesController.cs" />
-    <Compile Include="Areas\_Default\Controllers\ServicesController.cs" />
-    <Compile Include="Areas\_Default\Models\AlbumItem.cs" />
-    <Compile Include="Areas\_Default\Models\PhotoItem.cs" />
-    <Compile Include="Areas\_Default\_DefaultAreaRegistration.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\ResponsesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Models\AlbumItem.cs" />
+    <Compile Include="Models\PhotoItem.cs" />
     <Compile Include="Bootstrapper\Bootstrapper.cs" />
     <Compile Include="Bootstrapper\Registrators\BundleConfig.cs" />
     <Compile Include="Bootstrapper\Registrators\RouteConfig.cs" />
@@ -150,11 +148,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\Ann.jpg" />
     <Content Include="Content\images\fancybox_sprite.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\images\gotop.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo_new.png" />
+    <Content Include="Content\images\logo_small.jpg" />
     <Content Include="Content\mywed.png" />
     <Content Include="Content\PhotoSiteStyle.css" />
     <Content Include="Camera.ico" />
@@ -209,14 +210,13 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Areas\_Default\Views\Web.config" />
-    <Content Include="Areas\_Default\Views\_Layout.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Home.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Contacts.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Portfolio.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Album.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Responses.cshtml" />
-    <Content Include="Areas\_Default\Views\Shared\Services.cshtml" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\Shared\Home.cshtml" />
+    <Content Include="Views\Shared\Contacts.cshtml" />
+    <Content Include="Views\Shared\Portfolio.cshtml" />
+    <Content Include="Views\Shared\Album.cshtml" />
+    <Content Include="Views\Shared\Responses.cshtml" />
+    <Content Include="Views\Shared\Services.cshtml" />
     <Content Include="Portfolio\11.jpg" />
     <Content Include="Portfolio\12.jpg" />
     <Content Include="Portfolio\8.jpg" />
@@ -329,7 +329,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -346,12 +345,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

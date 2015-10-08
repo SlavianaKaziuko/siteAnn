@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SiteMVC.Areas._Default.Controllers
+namespace SiteMVC.Controllers
 {
     public class ContactsController : Controller
     {
@@ -15,7 +15,7 @@ namespace SiteMVC.Areas._Default.Controllers
                 return PartialView("Contacts");
             }
 
-            ViewBag.Layout = "~/Areas/_Default/Views/_Layout.cshtml";
+            ViewBag.Layout = "~/Views/_Layout.cshtml";
             return View();
         }
     }

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using SiteMVC.Areas._Default.Models;
+using SiteMVC.Models;
 
-namespace SiteMVC.Areas._Default.Controllers
+namespace SiteMVC.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: /_Default/Home/
+        // GET: /Home/
 
         public ActionResult Home()
         {

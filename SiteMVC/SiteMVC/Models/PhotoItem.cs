@@ -1,4 +1,4 @@
-﻿namespace SiteMVC.Areas._Default.Models
+﻿namespace SiteMVC.Models
 {
     public class PhotoItem
     {

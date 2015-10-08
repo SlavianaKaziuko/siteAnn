@@ -1,4 +1,5 @@
-﻿@using SiteMVC.Constants
+﻿@using System.Web.Mvc.Ajax
+@using SiteMVC.Constants
 @{
     Layout = null;
 }
@@ -17,14 +18,6 @@
     @Scripts.Render(ScriptBundles.JQuery)
     @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
     <script type="text/javascript">
-        //function ChangeUrl(title, url) {
-        //    if (typeof (history.pushState) != "undefined") {
-        //        var obj = { Title: title, Url: url };
-        //        history.pushState(obj, obj.Title, obj.Url);
-        //    } else {
-        //        alert("Browser does not support HTML5.");
-        //    }
-        //}
         $(document).ready(function () {
             $('.zoom-gallery').magnificPopup({
                 delegate: 'a',
@@ -52,8 +45,6 @@
             });
         });
     </script>
-    @*    <script src="~/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
-    <script src="~/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>*@
     <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
     <script type="text/javascript" src="/Scripts/PhotoSiteScript.js"></script>
     <link rel="stylesheet" type="text/css" href="/Content/PhotoSiteStyle.css" />
@@ -64,6 +55,27 @@
     <script src="//use.typekit.net/snf1yod.js"></script>
     <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
     <link rel="canonical" href="http://photoswipe.com">
+    
+    <script>
+        var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+
+        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+        function mischandler() {
+            return false;
+        }
+
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+
+        ;
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+        </script>
 </head>
 <body>
     @Scripts.Render(ScriptBundles.JQuery)
@@ -73,11 +85,8 @@
 
     <header>
         <a href="@Url.Action("Home", "Home")">
-            @*<img alt="logo" src="/Content/images/logo.png" />*@</a>
-        @*ФОТОГРАФ
-        <h2>АННА ПРОТАСОВА</h2>*@
-    </header>
-    <div class="container">
+            <img alt="logo" src="/Content/images/logo_new.png" />
+        </a>
         <div class="row">
             <nav class="menu">
                 <ul>
@@ -100,21 +109,10 @@
                 </ul>
             </nav>
         </div>
+    </header>
+    <div class="container">
         <br />
-@*        <div class="row">
-            <div id="demo-test-gallery" class="demo-gallery">
 
-                <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg" data-size="1600x1600" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg" data-med-size="1024x1024" data-author="Folkert Gorter" class="demo-gallery__img--main">
-                    <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" alt="" />
-                    <figure>This is dummy caption.</figure>
-                </a>
-                <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg" data-med-size="1024x683" data-author="Thomas Lefebvre">
-                    <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt="" />
-                    <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
-                </a>
-
-            </div>
-        </div>*@
         <div id="container">
             @RenderBody()
         </div>
@@ -122,7 +120,6 @@
             <div class="pswp__bg"></div>
 
             <div class="pswp__scroll-wrap">
-
                 <div class="pswp__container">
                     <div class="pswp__item"></div>
                     <div class="pswp__item"></div>
@@ -130,17 +127,11 @@
                 </div>
 
                 <div class="pswp__ui pswp__ui--hidden">
-
                     <div class="pswp__top-bar">
-
                         <div class="pswp__counter"></div>
-
                         <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
                         <button class="pswp__button pswp__button--share" title="Share"></button>
-
                         <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
                         <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                         <div class="pswp__preloader">
@@ -157,10 +148,6 @@
 
                     <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                         <div class="pswp__share-tooltip">
-                            <!-- <a href="#" class="pswp__share--facebook"></a>
-					<a href="#" class="pswp__share--twitter"></a>
-					<a href="#" class="pswp__share--pinterest"></a>
-					<a href="#" download class="pswp__share--download"></a> -->
                         </div>
                     </div>
 
@@ -182,8 +169,6 @@
         <div class="social-box">
             <a href="http://vk.com/protasova_photo">
                 <img src="http://vk.com/images/dev_logo_vk.png" alt="vk" /></a>
-@*            <a href="http://www.mywed.ru/photographer/view/profile/Opps001/">
-                <img src="/Content/mywed.png" alt="mywed" /></a>*@
         </div>
         <br />
         <div>
