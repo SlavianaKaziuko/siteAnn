@@ -13,51 +13,58 @@ html {
 }
 
 body {
-    background-color: #e9e8e6;
-    font-family: "Chiller";
+    background-color: #fcfcfc;
+    font-family: "Candara";
     text-align: center;
-    padding-top: 0;
+    padding-top: 0px;
 }
 
 header {
-    display: inline-block; /* Для старых браузеров */
+    display: block; /* Для старых браузеров */
     height: 180px; /* Высота шапки */
+    background: url(../Content/images/logo.png) no-repeat center center;
+    background-size: auto 140px;
+    background-color: white;
+    border-bottom: 3px solid #f6f6f6;
     text-align: left;
-    padding: 30px 0;
-    margin: auto;
+    width: 100%;
+    /*padding: 212px 0px 0px 7%;*/
     color: gray;
     font-size: 28px;
-    margin-bottom: 20px;
 }
 
 header a {
-    display: inline-block;
+    padding-top: 180px;
+    padding-left: 50px;
+    width: 100%;
+    min-height: 140px;
+    position: absolute;
 }
 
 header a img {
-    width: auto;
-    margin: 0 80px 0 0;
-    height: 140px;
+    width: 50%;
+    margin-top: -50px;
 }
 
 footer {
+    /*background: url(../Portfolio/main.jpg) no-repeat center bottom;
+    background-size: 100%;*/
+    background-color: white;
+    border-top: 3px solid #f6f6f6;
     height: 100px; /* Высота низа */
-    color: #6d7b85;
 }
 
-.menu ul
-{
-    padding: 0;
-    list-style: none;
-    font-size: 18px;
-    min-font-size: 12px;
+header h2 {
+    margin-top: 0px;
+    font-size: 70px;
 }
+
 
 nav.menu
 {
     margin-bottom: 0px;
     vertical-align: middle;
-    margin: 5px auto;
+    margin: 15px auto;
     max-width: 100%;
 }
 
@@ -69,11 +76,30 @@ nav.menu .menu-item
 
 nav.menu .menu-item.separator
 {
-    display: inline-block;
     padding: 0px;
     margin: 0px -2px;
     color: gray;
 }
+
+.row 
+{
+    margin: auto;
+    align-content: center;   
+}
+
+.menu ul
+{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    min-font-size: 12px;
+}
+
+.container {
+    width: 86%;
+    padding: 0px;
+}
+
 a {
     color: gray;
     text-decoration: none;
@@ -95,6 +121,12 @@ a:active, a:focus {
     color: black !important;
 }
 
+nav.menu
+{
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
 .menu
 {
     display: inline-block;
@@ -106,44 +138,18 @@ a:active, a:focus {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
 }
 
-.home img 
+a img
 {
-    width: 75%;
-    max-width: 600px;   
-}
- 
-.home p 
-{
-    padding-top: 50px;
-    text-indent: 1.5em;
-    font-size: 18px;
-    color: gray;
-}
-
-img 
-{
-    user-select: none;
-    -webkit-user-select: none;                /* disable cut copy paste */
-    -webkit-touch-callout: none;              /* disable callout, image save panel */
-    -webkit-tap-highlight-color: transparent; /* "turn off" link highlight */
-}
-
-.row 
-{
-    display: inline-block;
-    margin: auto;
-    align-content: center;   
-}
-
-.container {
-    /*min-height: 700px;*/
-    width: 86%;
-    padding: 0px;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .albumItem {
+    font-family: "Chaparral Pro Light";
     font-size: 22px;
 }
 
@@ -226,5 +232,7 @@ img:hover
 	vertical-align: top;
 	letter-spacing: 0;
     padding: 20px 20px 17px 18px;
+    background: url("../Content/vk_back.png") no-repeat center center;
+    background-size: 50px;
 }
 
