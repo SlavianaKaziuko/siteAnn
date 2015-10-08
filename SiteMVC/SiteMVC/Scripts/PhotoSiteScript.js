@@ -6,7 +6,7 @@ $(function () {
         $(items[activeEl]).removeClass('active');
         $(this).addClass('active');
         activeEl = $(".menu-item").index(this);
-        $("body,html").animate({ "scrollTop": 212 }, 500);
+        //$("body,html").animate({ "scrollTop": 212 }, 500);
     });
 });
 
@@ -33,11 +33,4 @@ function scrollUp() {
 }
 
 
-//$(document).ready(function () {
-//    //FANCYBOX
-//    //https://github.com/fancyapps/fancyBox
-//    $(".fancybox").fancybox({
-//        openEffect: "none",
-//        closeEffect: "none"
-//    });
-//});
+

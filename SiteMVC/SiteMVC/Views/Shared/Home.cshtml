@@ -1,0 +1,24 @@
+﻿@using SiteMVC.Models
+@{
+    ViewBag.Title = "Anna Protasova Photography";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div class="home">
+    <img alt="Ann" src="/Content/images/Ann.jpg" />
+    <p>
+        Здравствуйте! Меня зовут Анна. 
+        <br>Я люблю фотографировать и буду очень рада сотрудничать с Вами!
+    </p>
+
+    @*@foreach (PhotoItem photo in ViewBag.Photos)
+    {
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <a class="thumbnail"  onclick="">
+                <img alt="@photo.Name" src="@photo.Path" />
+            </a>
+        </div>
+    }*@
+
+</div>
+
