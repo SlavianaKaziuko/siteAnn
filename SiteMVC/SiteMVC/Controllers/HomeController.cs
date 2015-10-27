@@ -13,7 +13,7 @@ namespace SiteMVC.Controllers
             var photos = new List<PhotoItem>();
             for (var i = 1; i < 13; i++)
             {
-                photos.Add(new PhotoItem { Name = i + ".jpg", Path = "/Portfolio/" + i + ".jpg" });
+                photos.Add(new PhotoItem { Name = i + ".jpg", Path = "/Content/Portfolio/" + i + ".jpg" });
             }
 
             ViewBag.Photos = photos;

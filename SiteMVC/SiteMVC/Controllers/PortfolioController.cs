@@ -16,7 +16,7 @@ namespace SiteMVC.Controllers
 
         public ActionResult Portfolio()
         {
-            var portfolioDir = new DirectoryInfo(Server.MapPath("~/") + "\\Portfolio");
+            var portfolioDir = new DirectoryInfo(Server.MapPath("~/") + "\\Content\\Portfolio");
             var album = new List<AlbumItem>();
             foreach (var directoryInfo in portfolioDir.GetDirectories().Where(dir => dir.Name != "[Originals]"))
             {
@@ -38,7 +38,7 @@ namespace SiteMVC.Controllers
                     desc = descElem.InnerText;
                 }
 
-                album.Add(new AlbumItem { Name = name, Description = desc, Path = path, MainPhotoPath = "/Portfolio/" + directoryInfo.Name + "/0.jpg" });
+                album.Add(new AlbumItem { Name = name, Description = desc, Path = path, MainPhotoPath = "/Content/Portfolio/" + directoryInfo.Name + "/0.jpg" });
             }
 
             ViewBag.Album = album;
@@ -54,7 +54,7 @@ namespace SiteMVC.Controllers
 
         public ActionResult Album(string path)
         {
-            var photoDir = new DirectoryInfo(Server.MapPath("~/") + "\\Portfolio\\" + path);
+            var photoDir = new DirectoryInfo(Server.MapPath("~/") + "\\Content\\Portfolio\\" + path);
             var infoFile = new XmlDocument();
             infoFile.Load(photoDir.FullName + @"\info.xml");
 
@@ -95,7 +95,7 @@ namespace SiteMVC.Controllers
                     photos.Add(new PhotoItem
                     {
                         Name = photoItem.Name,
-                        Path = "/Portfolio/" + photoDir.Name + "/" + photoItem.Name,
+                        Path = "/Content/Portfolio/" + photoDir.Name + "/" + photoItem.Name,
                         Width = width,
                         Height = height,
                         Size = width + "x" + height,

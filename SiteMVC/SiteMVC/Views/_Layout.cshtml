@@ -90,19 +90,19 @@
         <div class="row">
             <nav class="menu">
                 <ul>
-                    <li class="menu-item" onclick="ChangeUrl('Portfolio', 'Portfolio');">
+                    <li class="menu-item" onclick="ChangeUrl('Portfolio', 'Портфолио');">
                         @Ajax.ActionLink("ПОРТФОЛИО", "Portfolio", "Portfolio", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>
-                    <li class="menu-item" onclick="ChangeUrl('Responses', 'Responses');">
+                    @*<li class="menu-item" onclick="ChangeUrl('Responses', 'Отзывы');">
                         @Ajax.ActionLink("ОТЗЫВЫ", "Responses", "Responses", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-                    </li>
+                    </li>*@
                     <li class="menu-item separator">|</li>
-                    <li class="menu-item" onclick="ChangeUrl('Services', 'Services');">
+                    <li class="menu-item" onclick="ChangeUrl('Services', 'Услуги');">
                         @Ajax.ActionLink("УСЛУГИ", "Services", "Services", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>
-                    <li class="menu-item" onclick="ChangeUrl('Contacts', 'Contacts');">
+                    <li class="menu-item" onclick="ChangeUrl('Contacts', 'Контакты');">
                         @Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
 
