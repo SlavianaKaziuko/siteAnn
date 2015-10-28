@@ -203,6 +203,9 @@
     <Content Include="Content\PhotoSwipe-master\website\test\vertical-swipe.jpg" />
     <Content Include="Content\PhotoSwipe-master\website\_includes\menu.html" />
     <Content Include="Content\PhotoSwipe-master\website\_layouts\default.html" />
+    <Content Include="Content\PortfolioContent\Natasha\1.jpg" />
+    <Content Include="Content\PortfolioContent\newborn.jpg" />
+    <Content Include="Content\PortfolioContent\newborn_life.jpg" />
     <Content Include="Content\vk.png" />
     <Content Include="Content\vk_back.png" />
     <Content Include="Global.asax" />
@@ -280,7 +283,6 @@
     <Content Include="Content\PortfolioContent\Natasha\-CHocIg5Bck.jpg" />
     <Content Include="Content\PortfolioContent\Natasha\0.jpg" />
     <Content Include="Content\PortfolioContent\Natasha\10.jpg" />
-    <Content Include="Content\PortfolioContent\Natasha\4KoWDOtPAxU.jpg" />
     <Content Include="Content\PortfolioContent\Natasha\fUs4ZsmmSAM.jpg" />
     <Content Include="Content\PortfolioContent\Natasha\HvfA9ArZxmY.jpg" />
     <Content Include="Content\PortfolioContent\Natasha\I9pNiCi90MQ %281%29.jpg" />

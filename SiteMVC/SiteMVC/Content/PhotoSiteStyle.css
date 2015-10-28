@@ -15,6 +15,7 @@ html {
 body {
     background-color: #e9e8e6;
     font-family: "Constantia";
+    color: #525152;
     text-align: center;
     padding-top: 0;
 }
@@ -141,6 +142,8 @@ img
     /*min-height: 700px;*/
     width: 86%;
     padding: 0px;
+    font-size: 16px;  
+
 }
 
 .albumItem {
@@ -166,6 +169,7 @@ img
     max-height: 1020px;
     margin: 20px auto;
 }
+
 
 #up {
 
