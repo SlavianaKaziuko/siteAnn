@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ResponsesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
@@ -156,6 +157,7 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo_new.png" />
     <Content Include="Content\images\logo_small.jpg" />
+    <Content Include="Content\images\logo_vk.png" />
     <Content Include="Content\mywed.png" />
     <Content Include="Content\PhotoSiteStyle.css" />
     <Content Include="Camera.ico" />
@@ -206,6 +208,7 @@
     <Content Include="Content\PortfolioContent\Natasha\1.jpg" />
     <Content Include="Content\PortfolioContent\newborn.jpg" />
     <Content Include="Content\PortfolioContent\newborn_life.jpg" />
+    <Content Include="Content\PortfolioContent\parents.jpg" />
     <Content Include="Content\vk.png" />
     <Content Include="Content\vk_back.png" />
     <Content Include="Global.asax" />
@@ -343,6 +346,7 @@
     </Content>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

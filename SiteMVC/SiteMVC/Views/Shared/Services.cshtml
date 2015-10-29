@@ -1,40 +1,45 @@
 ﻿@{
-    ViewBag.Title = "Services";
+    ViewBag.Title = "Услуги";
     Layout = ViewBag.Layout;
 }
 
 <h2>ВИДЫ ФОТОУСЛУГ:</h2>
-<ul>
+<br />
+<ul class ="services">
     <li>
         <img alt="cherish" src="/Content/PortfolioContent/YuriKarina/0.jpg"/>
-        cherish {family/couples}
-        Up to 2 hour on location session – suitable for families (max 6 people) or couples.
+        <div>НЕЖНОСТЬ {семья/пара}<br/>Фотосъемка до 2 часов – подходит для семей (макс 6 человек) или пары.</div> 
     </li>
     <li>
+        <div>СОКРОВИЩЕ {для беременных}<br/>1 - 2 часовая съемка в локации – в идеале запланированная на 34-36 неделю, братья, сестры и партнеры приветствуются.</div> 
         <img alt="maternity" src="/Content/PortfolioContent/Natasha/1.jpg"/>
-        treasure {maternity}
-        1 to 2 hour on location session – Ideally scheduled for 34-36 week, siblings and partners welcome.
     </li>
     <li>
         <img alt="newborn" src="/Content/PortfolioContent/newborn.jpg"/>
-        adore {newborn} studio format
-        Studio Format ~ A 3-4 hour session which involves posed “studio” shots of baby & family. 
-        These sessions are conducted in my Home studio located in Aubin Grove. 
-        These sessions are preferably scheduled in advance of baby’s birth as the ideal timeframe for these is between Day 5-10.
+        <div>Детки {новорожденные} студийный формат<br/>
+            Студийный формат - 1 час фотосъемки, включающий в себя поставленные студийные фотографии ребенка и семьи.
+            Идеальные возраст - от 5 до 14 дней. Такие фотосъемки предпочтительнее планировать до рождения ребенка.</div> 
     </li>
     <li>
+        <div>Детки {новорожденные} – жизненный формат<br/>
+            Жизненный формат ~ 2-часовая съемка в локации, включающие в себя жизненные/искренние фотографии ребенка и семьи. 
+            Такая съемка проходит на открытом воздухе или в вашем доме. 
+            Такие фотосъемки предпочтительнее планировать до рождения ребенка, однако могут быть проведены в любое время после рождения ребенка.</div> 
         <img alt="newborn" src="/Content/PortfolioContent/newborn_life.jpg"/>
-        adore {newborn} – lifestyle format
-        Lifestyle Format ~ A 2 hour on location session which involves lifestyle/candid photographs of baby & family.  These sessions are conducted on location outdoors or in your home. These sessions are preferably scheduled in advance of baby’s birth however they can be held anytime after baby’s birth.
     </li>
     <li>
-        Also Available are Hello Baby in Hospital Sessions. 
-        These lifestyle based sessions are held within 48 hours of baby’s birth in hospital and focus on capturing first moments and introductions.
+        <img alt="parents" src="/Content/PortfolioContent/parents.jpg"/>
+        <div>Also Available are Hello Baby in Hospital Sessions. 
+        These lifestyle based sessions are held within 48 hours of baby’s birth in hospital and focus on capturing first moments and introductions.</div> 
     </li>
 </ul> 
 
+<br/>
+Для получения более подробной информации, 
+@Ajax.ActionLink("пишите или звоните", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" }).
+Фотосъемка мероприятий оценивается по-часовой ставке.
+Пожалуйста @Ajax.ActionLink("свяжитесь со мной", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" }) 
+для получения более подробной информации о съемке мероприятий и детских дней рождений.
 
-For full pricing on sessions & image collections including digital image files please  email me at lanaprattphotography@outlook.com or contact me through the contact page on the website.
-Event photography packages start from 2 hours of coverage with additional hours charged at an hourly rate. Please contact me at lanaprattphotography@outlook.com for more information about event photography & children’s birthday party packages & inclusions.
 
 

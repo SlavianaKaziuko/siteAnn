@@ -1,12 +1,12 @@
-﻿/**, *:before, *:after
+﻿*, *:before, *:after
 {
     /* Chrome 9-, Safari 5-, iOS 4.2-, Android 3-, Blackberry 7- */
-    /*-webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     /* Firefox (desktop or Android) 28- */
-   /* -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     /* Firefox 29+, IE 8+, Chrome 10+, Safari 5.1+, Opera 9.5+, iOS 5+, Opera Mini Anything, Blackberry 10+, Android 4+ */
-   /* box-sizing: border-box;
-}*/
+    box-sizing: border-box;
+}
 
 html {
     padding-top: 0px;
@@ -135,7 +135,7 @@ img
 {
     display: inline-block;
     margin: auto;
-    align-content: center;   
+    /*align-content: center;*/   
 }
 
 .container {
@@ -144,6 +144,43 @@ img
     padding: 0px;
     font-size: 16px;  
 
+}
+
+.services {
+    width: 80%;
+    margin: auto;
+}
+
+.services img 
+{
+    display: inline-block;
+    margin: 0px;
+    width: 39%;
+}
+
+.services div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    width: 60%;
+}
+
+.services li 
+{
+    border-bottom: 1px dotted white;
+    list-style-type: none; 
+}
+
+.services li:nth-child(even) div
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.services li:nth-child(odd) div
+{
+    text-align: left;
+    padding-left: 10px;
 }
 
 .albumItem {
@@ -192,12 +229,18 @@ img
     text-align: center;
 }
 
-#vk_groups {
-    display: block;
-    width: 500px; /* Ширина элемента в пикселах */
-    padding: 10px;
-    margin: auto; /* Выравниваем по центру */
+.contactMe {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    width: 300px;
+}
 
+#vk_groups {
+    display: inline-block;
+    width: 500px; /* Ширина элемента в пикселах */
+    height: 500px;
+    margin-left: 10px;
 }
 
 img:hover

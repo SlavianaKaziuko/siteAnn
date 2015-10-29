@@ -22,6 +22,10 @@ namespace SiteMVC.App_Start
                 "Services/{action}/{id}",
                 new {controller = "Services", action = "Services", id = UrlParameter.Optional});
             routes.MapRoute(
+                "News_Default",
+                "News/{action}/{id}",
+                new { controller = "News", action = "News", id = UrlParameter.Optional });
+            routes.MapRoute(
                 "Contacts_Default",
                 "Contacts/{action}/{id}",
                 new { controller = "Contacts", action = "Contacts", id = UrlParameter.Optional });
