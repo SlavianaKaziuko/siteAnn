@@ -75,10 +75,13 @@ nav.menu .menu-item.separator
     margin: 0px -2px;
     color: gray;
 }
+
 a {
     color: gray;
-    text-decoration: none;
+    text-decoration: underline;
 }
+
+
 
 a:hover {
     font-style: normal;
@@ -96,6 +99,10 @@ a:active, a:focus {
     color: black !important;
 }
 
+hr {
+    color: white;
+}
+
 .menu
 {
     display: inline-block;
@@ -107,6 +114,14 @@ a:active, a:focus {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+}
+
+.menu a {
+    text-decoration: none;    
+}
+
+.contactMe a{
+    text-decoration: none;    
 }
 
 .home img 
@@ -142,13 +157,14 @@ img
     /*min-height: 700px;*/
     width: 86%;
     padding: 0px;
-    font-size: 16px;  
-
+    font-size: 16px;
+    max-width: 1350px;
 }
 
 .services {
-    width: 80%;
+    width: 100%;
     margin: auto;
+    padding: 0px;
 }
 
 .services img 
@@ -165,26 +181,88 @@ img
     width: 60%;
 }
 
+.services h3 {
+    margin-bottom: 30px;
+}
+
+.services h3 span{
+    width: auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    
+}
+
 .services li 
 {
+    text-align: left;
+    padding: 20px 0px;
     border-bottom: 1px dotted white;
     list-style-type: none; 
 }
 
 .services li:nth-child(even) div
 {
-    text-align: right;
+    /*text-align: right;*/
     padding-right: 10px;
+}
+
+.services li:nth-child(even) img
+{
+    right: 0px;
 }
 
 .services li:nth-child(odd) div
 {
-    text-align: left;
+    /*text-align: left;*/
     padding-left: 10px;
 }
 
-.albumItem {
+.services li:nth-child(odd) img
+{
+    left: 0px;
+}
+
+.portfolioItem
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+.albumItem 
+{
     font-size: 22px;
+	width: 98%;
+	position: relative; 
+	display: inline-block; 
+	color: lightblue; 
+	/*width: 226px; 
+	text-decoration: none;*/ 
+	cursor: pointer;
+	padding: 0px;
+	margin: 0px;
+}
+.albumItem:hover 
+{
+	background: transparent
+}
+
+.albumItem span 
+{
+	display: none; 
+	width: 100%;
+	position: absolute; 
+	/*top: 50%; */
+	bottom: 0px;
+}
+
+.albumItem:hover span 
+{
+	display: block; 
+	/*border: 3px solid #e5e5e5; */
+	color: #636363;
+	opacity: 0.7; 
+	background: #dddddd; 
+	filter: alpha(opacity=70)
 }
 
 .albumDescription {

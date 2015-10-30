@@ -28,7 +28,7 @@ function ChangeUrl(title, url) {
 
 function scrollUp() {
     var curPos = $(document).scrollTop();
-    var scrollTime = curPos / 1.75;
+    var scrollTime = curPos / 2;
     $("body,html").animate({ "scrollTop": 0 }, scrollTime);
 }
 
