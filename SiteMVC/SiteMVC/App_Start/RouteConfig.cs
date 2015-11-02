@@ -30,6 +30,10 @@ namespace SiteMVC.App_Start
                 "Contacts/{action}/{id}",
                 new { controller = "Contacts", action = "Contacts", id = UrlParameter.Optional });
             routes.MapRoute(
+                "Error_Default",
+                "Error/{action}/{id}",
+                new { controller = "Error", action = "Contacts", id = UrlParameter.Optional });
+            routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
                 new { controller = "Home", action = "Home", id = UrlParameter.Optional }
