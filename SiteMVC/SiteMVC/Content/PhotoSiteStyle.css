@@ -129,6 +129,7 @@ hr {
     width: 50%;
     max-width: 600px;   
 	display: inline-block;
+	vert-align: middle;
 }
  
  
@@ -137,11 +138,13 @@ hr {
 {
 	display: inline-block;
     padding-top: 50px;
+	padding-left: 50px;
     font-size: 18px;
     color: gray;
 	width: 50%; 
 	margin:auto;
-	text-align:left
+	text-align:left;
+	vert-align: middle;
 }
 
 .home span
