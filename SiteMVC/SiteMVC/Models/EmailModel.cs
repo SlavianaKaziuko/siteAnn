@@ -10,6 +10,8 @@ namespace SiteMVC.Models
 
         public string FromName { get; set; }
 
+        public string Telephone { get; set; }
+
         public string To { get; set; }
 
         public string Body { get; set; }

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Configuration;
-using System.Configuration.Internal;
 using System.Net;
 using System.Net.Configuration;
 using System.Net.Mail;
-using System.Web.Configuration;
-using Newtonsoft.Json;
 using SiteMVC.Models;
 
 namespace SiteMVC.Tools
@@ -14,23 +11,42 @@ namespace SiteMVC.Tools
     {
         public static void SendContactMail(EmailModel model)
         {
-            
-            var client = new SmtpClient();
-
-            var message = new MailMessage
+            /*var message = new MailMessage
             {
                 Subject = model.Subject,
-                //From = new MailAddress(model.From, model.FromName),
+                From = new MailAddress(model.From, model.FromName),
                 Body = String.Format("{0}. Sent from {1}", model.Body, model.From),
                 IsBodyHtml = false
             };
 
-            message.To.Add(model.To);
+            message.To.Add(model.To);*/
+            /*var mailSettings = (SmtpSection) ConfigurationManager.GetSection("system.net/mailSettings");
+            var client = new SmtpClient();
 
-            client.Credentials = new NetworkCredential("username@domain.com", "pwd");
-            client.Port = 465;
-            client.EnableSsl = true;
-            client.Send(message);
+            var mailClient = new SmtpClient("mail.annaprotasova.by", 25)
+            {
+                Credentials = new NetworkCredential("noreply@annaprotasova.by", "annyshka001_yandex"),
+                EnableSsl = false
+            };*/
+            var message = new MailMessage
+            {
+                Subject = model.Subject,
+                //From = new MailAddress(model.From, model.FromName),
+                Body = String.Format("{0}.\n\nИмя - {1}\nТел - {2}\nEmail - {3}", model.Body, model.FromName, model.Telephone, model.From),
+                IsBodyHtml = false
+            };
+
+            message.To.Add(model.To);
+            var mailSettings = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
+            var mailClient = new SmtpClient(mailSettings.Network.Host, mailSettings.Network.Port)
+            {
+                Credentials = new NetworkCredential(mailSettings.Network.UserName, mailSettings.Network.Password),
+                EnableSsl = mailSettings.Network.EnableSsl
+            };
+
+            message.From = new MailAddress(mailSettings.From);
+
+            mailClient.Send(message);
         }
     }
 }

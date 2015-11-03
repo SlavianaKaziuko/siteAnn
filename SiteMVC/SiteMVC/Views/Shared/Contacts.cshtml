@@ -18,12 +18,16 @@
                 @Html.ValidationMessageFor(m => m.From)
             </div>            
             <div class="">
-                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Name", @class="your-name"})
+                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Имя Фамилия", @class="your-name"})
                 @Html.ValidationMessageFor(m => m.FromName)
+            </div> 
+            <div class="">
+                @Html.TextBoxFor(m => m.Telephone, new {required = "", placeholder="Телефон", @class=""})
+                @Html.ValidationMessageFor(m => m.Telephone)
             </div>    
             <br style="clear: both;">
-            <div class="" style="width: 98%; clear: both; margin-top: 20px;">
-                @Html.TextAreaFor(m => m.Body, new {required = "", placeholder="Your Message..."})
+            <div class="" style="width: 98%; clear: both; margin-top: 10px;">
+                @Html.TextAreaFor(m => m.Body, new {required = "", placeholder="Текст сообщения..."})
                 @Html.ValidationMessageFor(m => m.Body)
             </div>    
             <button type="submit" id="sendbutton">Send</button>

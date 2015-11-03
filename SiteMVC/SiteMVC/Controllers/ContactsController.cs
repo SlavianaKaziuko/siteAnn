@@ -26,6 +26,7 @@ namespace SiteMVC.Controllers
         }
 
         [HttpPost]
+        [Route("Contacts")]
         public ActionResult SendMeEmail(EmailModel model)
         {
             if (ModelState.IsValid)
@@ -42,14 +43,16 @@ namespace SiteMVC.Controllers
                 
             }
 
+            ViewBag.ModelEmail = model;
+
             if (Request.IsAjaxRequest())
             {
                 ViewBag.Layout = null;
                 return PartialView("Contacts");
             }
-
+            
             ViewBag.Layout = "~/Views/_Layout.cshtml";
-            return View();
+            return View("Contacts", model);
         }
 
         public ActionResult Success()
