@@ -348,7 +348,7 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\News.cshtml" />
-    <Content Include="Views\Shared\errorPage.cshtml" />
+    <Content Include="Views\Shared\error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
