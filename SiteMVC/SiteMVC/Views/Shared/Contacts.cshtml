@@ -11,7 +11,7 @@
     }
     else
     {
-        using (Html.BeginForm("SendMeEmail", "Contacts", FormMethod.Post))
+        using (Html.BeginForm("Contacts", "Contacts", FormMethod.Post))
         {
             <div class="">
                 @Html.TextBoxFor(m => m.From, new {required = "", placeholder="Email"})

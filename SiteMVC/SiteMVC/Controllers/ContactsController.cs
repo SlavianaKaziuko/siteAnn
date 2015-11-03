@@ -26,8 +26,7 @@ namespace SiteMVC.Controllers
         }
 
         [HttpPost]
-        [Route("Contacts")]
-        public ActionResult SendMeEmail(EmailModel model)
+        public ActionResult Contacts(EmailModel model)
         {
             if (ModelState.IsValid)
             {
