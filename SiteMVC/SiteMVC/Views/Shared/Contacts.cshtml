@@ -3,42 +3,64 @@
     ViewBag.Title = "Контакты";
     Layout = ViewBag.Layout;
 }
-
+♥ ♥ ♥ 
+<br />
+<br />
 <div class="contactMe">
+    <h3>
+        Свяжитесь со мной
+    </h3>
+    <h4>
+        <a href="http://vk.com/write44851386" target="_blank">
+            Напишите ВКонтакте
+        </a>
+    </h4>
+    <h4>
+        <a href="tel:+375(29)5405546">
+            Позвоните: +375(29) 540-55-46 (МТС)
+        </a>
+    </h4>
+    <h4>
+        <a href="skype:opps1987?chat">
+            Свяжитесь в скайпе
+        </a>
+    </h4>
+    
+</div>
+    
+<div class="contactMe">
+    <h3>
+        Или отправьте мне email
+    </h3>
+
     @if (ViewBag.ModelEmail.Success)
     {
-        <h3 class="">Your message has been sent and we will be in touch shortly. <span>Thank you!</span></h3>
+        <h4>Your message has been sent and we will be in touch shortly. <span>Thank you!</span></h4>
     }
     else
     {
         using (Html.BeginForm("Contacts", "Contacts", FormMethod.Post))
         {
-            <div class="">
+            <div>
                 @Html.TextBoxFor(m => m.From, new {required = "", placeholder="Email"})
                 @Html.ValidationMessageFor(m => m.From)
             </div>            
-            <div class="">
-                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Имя Фамилия", @class="your-name"})
+            <div>
+                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Имя Фамилия"})
                 @Html.ValidationMessageFor(m => m.FromName)
             </div> 
             <div class="">
-                @Html.TextBoxFor(m => m.Telephone, new {required = "", placeholder="Телефон", @class=""})
+                @Html.TextBoxFor(m => m.Telephone, new {required = "", placeholder="Телефон"})
                 @Html.ValidationMessageFor(m => m.Telephone)
             </div>    
             <br style="clear: both;">
-            <div class="" style="width: 98%; clear: both; margin-top: 10px;">
+            <div>
                 @Html.TextAreaFor(m => m.Body, new {required = "", placeholder="Текст сообщения..."})
                 @Html.ValidationMessageFor(m => m.Body)
             </div>    
-            <button type="submit" id="sendbutton">Send</button>
+            <button type="submit" id="sendbutton">Отправить</button>
         }
     }
-</div>
-    
-<div class="contactMe">
-    Снимаю с любовью ♥
-    <br />
-    <a href="tel:+375(29)5405546">+375(29) 540-55-46 (МТС)</a>
-    <h4><a href="skype:opps1987?chat">chat in skype</a></h4>
+  
 </div>
    

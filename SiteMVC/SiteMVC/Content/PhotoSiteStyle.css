@@ -222,6 +222,42 @@ img
     left: 0px;
 }
 
+
+.contactMe {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 40px 0px 30px;
+    width: 400px;
+}
+
+.contactMe input, .contactMe textarea {
+    width: 400px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.contactMe h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid white; 
+}
+
+.contactMe h4 {
+    width: 80%;
+    text-align: left;
+    margin: 20px auto;
+}
+
+.contactMe button{
+    width: 150px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
 .portfolioItem
 {
 	padding: 0px;
@@ -307,12 +343,6 @@ img
     text-align: center;
 }
 
-.contactMe {
-    display: inline-block;
-    vertical-align: middle;
-    margin: auto;
-    width: 300px;
-}
 
 #vk_groups {
     display: inline-block;
