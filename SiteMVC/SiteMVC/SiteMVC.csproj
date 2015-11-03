@@ -129,6 +129,7 @@
     <Compile Include="Controllers\ResponsesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Models\AlbumItem.cs" />
+    <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\PhotoItem.cs" />
     <Compile Include="Bootstrapper\Bootstrapper.cs" />
     <Compile Include="Bootstrapper\Registrators\BundleConfig.cs" />
@@ -140,6 +141,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MailSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

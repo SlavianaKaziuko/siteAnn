@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace SiteMVC.App_Start
+namespace SiteMVC
 {
     public static class WebApiConfig
     {

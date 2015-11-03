@@ -2,9 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using SiteMVC.App_Start;
 using SiteMVC.Bootstrapper.Registrators;
-using RouteConfig = SiteMVC.App_Start.RouteConfig;
+using RouteConfig = SiteMVC.RouteConfig;
 
 namespace SiteMVC
 {

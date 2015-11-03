@@ -1,14 +1,40 @@
-﻿@{
+﻿@model SiteMVC.Models.EmailModel
+@{
     ViewBag.Title = "Контакты";
     Layout = ViewBag.Layout;
 }
 
-<div>
-    <div class="contactMe">
-        Снимаю с любовью ♥
-        <br />
-   <a href="tel:+375(29)5405546">+375(29) 540-55-46 (МТС)</a>
-            <h4><a href="skype:opps1987?chat">chat in skype</a></h4>
-    </div>
-    
+<div class="contactMe">
+    @if (ViewBag.ModelEmail.Success)
+    {
+        <h3 class="">Your message has been sent and we will be in touch shortly. <span>Thank you!</span></h3>
+    }
+    else
+    {
+        using (Html.BeginForm("SendMeEmail", "Contacts", FormMethod.Post))
+        {
+            <div class="">
+                @Html.TextBoxFor(m => m.From, new {required = "", placeholder="Email"})
+                @Html.ValidationMessageFor(m => m.From)
+            </div>            
+            <div class="">
+                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Name", @class="your-name"})
+                @Html.ValidationMessageFor(m => m.FromName)
+            </div>    
+            <br style="clear: both;">
+            <div class="" style="width: 98%; clear: both; margin-top: 20px;">
+                @Html.TextAreaFor(m => m.Body, new {required = "", placeholder="Your Message..."})
+                @Html.ValidationMessageFor(m => m.Body)
+            </div>    
+            <button type="submit" id="sendbutton">Send</button>
+        }
+    }
 </div>
+    
+<div class="contactMe">
+    Снимаю с любовью ♥
+    <br />
+    <a href="tel:+375(29)5405546">+375(29) 540-55-46 (МТС)</a>
+    <h4><a href="skype:opps1987?chat">chat in skype</a></h4>
+</div>
+   

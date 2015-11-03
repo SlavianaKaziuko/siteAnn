@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SiteMVC.App_Start
+namespace SiteMVC
 {
     public class FilterConfig
     {
