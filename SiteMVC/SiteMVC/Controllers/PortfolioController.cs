@@ -22,6 +22,7 @@ namespace SiteMVC.Controllers
             {
                 var infoFile = new XmlDocument();
                 var path = directoryInfo.Name;
+                if (!System.IO.File.Exists(directoryInfo.FullName + @"\info.xml")) continue;
                 infoFile.Load(directoryInfo.FullName + @"\info.xml");
 
                 var nameElem = infoFile.GetElementsByTagName("Name").Item(0);
@@ -38,7 +39,13 @@ namespace SiteMVC.Controllers
                     desc = descElem.InnerText;
                 }
 
-                album.Add(new AlbumItem { Name = name, Description = desc, Path = path, MainPhotoPath = "/Content/PortfolioContent/" + directoryInfo.Name + "/0.jpg" });
+                album.Add(new AlbumItem
+                {
+                    Name = name,
+                    Description = desc,
+                    Path = path,
+                    MainPhotoPath = "/Content/PortfolioContent/" + directoryInfo.Name + "/0.jpg"
+                });
             }
 
             ViewBag.Album = album;

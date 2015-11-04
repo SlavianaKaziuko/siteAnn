@@ -129,10 +129,8 @@ hr {
     width: 50%;
     max-width: 600px;   
 	display: inline-block;
-	vert-align: middle;
+	vertical-align: top;
 }
- 
- 
  
 .home p 
 {
@@ -144,7 +142,7 @@ hr {
 	width: 50%; 
 	margin:auto;
 	text-align:left;
-	vert-align: middle;
+	vertical-align: top;
 }
 
 .home span
