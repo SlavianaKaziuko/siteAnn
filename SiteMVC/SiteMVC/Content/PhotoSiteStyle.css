@@ -13,6 +13,7 @@ html {
 }
 
 body {
+    min-width: 500px;
     background-color: #e9e8e6;
     font-family: "Constantia";
     color: #525152;
@@ -33,11 +34,11 @@ header {
 
 header a {
     display: inline-block;
+    margin: 0 80px 0 0;
 }
 
 header a img {
-    width: auto;
-    margin: 0 80px 0 0;
+    width: 161px;
     height: 140px;
 }
 
@@ -46,16 +47,10 @@ footer {
     color: #6d7b85;
 }
 
-.menu ul
-{
-    padding: 0;
-    list-style: none;
-    font-size: 18px;
-    min-font-size: 12px;
-}
 
 nav.menu
 {
+    min-width: 150px;
     margin-bottom: 0px;
     vertical-align: middle;
     margin: 5px auto;
@@ -74,6 +69,32 @@ nav.menu .menu-item.separator
     padding: 0px;
     margin: 0px -2px;
     color: gray;
+}
+
+.menu
+{
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.menu a {
+    text-decoration: none;  
+        margin: 0px -2px;
+  
+}
+.menu ul
+{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    min-font-size: 12px;
 }
 
 a {
@@ -103,26 +124,7 @@ hr {
     color: white;
 }
 
-.menu
-{
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  list-style-type: disc;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-}
 
-.menu a {
-    text-decoration: none;    
-}
-
-.contactMe a{
-    text-decoration: none;    
-}
 
 .home img 
 {
@@ -172,6 +174,9 @@ img
     padding: 0px;
     font-size: 16px;
     max-width: 1350px;
+}
+.contactMe a{
+    text-decoration: none;    
 }
 
 .services {
@@ -335,8 +340,7 @@ img
 }
 
 
-#up {
-
+#up {  
     width: 60px;
     height: 60px;
     position: fixed;
@@ -359,9 +363,7 @@ img
 
 #vk_groups {
     display: inline-block;
-    width: 500px; /* Ширина элемента в пикселах */
-    height: 500px;
-    margin-left: 10px;
+    margin: auto;
 }
 
 img:hover
@@ -396,3 +398,62 @@ img:hover
     padding: 20px 20px 17px 18px;
 }
 
+
+
+@media only screen and (max-width: 361px) {
+    .container {
+        width: 96%;
+    }
+    
+    header a {
+        width: 161px;
+        margin: 0px 10px 0px 0px;
+    }
+    
+    nav.menu .menu-item {
+        margin: 10px;
+        display: block;
+    }
+
+    nav.menu .menu-item.separator {
+        display: none;
+        height: 0px;
+    }
+    
+    .home img {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .home p {
+        display: inline-block;
+        padding-top: 20px;
+        font-size: 18px;
+        color: gray;
+        width: 100%;
+        margin: auto;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .home span {
+        font-family: 'Andantino script', arial;
+        font-size: 27px;
+    }
+
+    .photo-horizontal {
+        display: block;
+        max-width: 400px;
+        margin: 5px auto;
+    }
+    .photo-vertical {
+        display: block;
+        max-height: 400px;
+        margin: 5px auto;
+    }
+
+    .albumDescription {
+        width: 360px;
+    }
+}

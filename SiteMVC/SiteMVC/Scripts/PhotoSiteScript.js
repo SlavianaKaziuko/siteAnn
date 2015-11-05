@@ -12,6 +12,10 @@ $(function () {
 
 $(document).ready(function() {
     //Обработка нажатия на кнопку "Вверх"
+    //var w = screen.width,
+    //h = screen.height;
+    //alert(w + 'x' + h);
+
     $("#up").click(function() {
         scrollUp();
     });
