@@ -1,4 +1,13 @@
 ﻿var activeEl = -1;
+
+//Deny right mouse click on photo
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+//Deny right mouse click on photo
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+
 $(function () {
     var items = $('.menu-item');
     $(items[activeEl]).addClass('active');
@@ -15,11 +24,46 @@ $(document).ready(function() {
     //var w = screen.width,
     //h = screen.height;
     //alert(w + 'x' + h);
+	/*$('.zoom-gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                closeOnContentClick: false,
+                closeBtnInside: false,
+                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                image: {
+                    verticalFit: true,
+                    titleSrc: function (item) {
+                        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="' + item.el.attr('data-source') + '" target="_blank">image source</a>';
+                    }
+                },
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300, // don't foget to change the duration also in CSS
+                    opener: function (element) {
+                        return element.find('img');
+                    }
+                }
 
+            });*/
+			
     $("#up").click(function() {
         scrollUp();
     });
 });
+
+//Deny right mouse click on photo
+function mischandler() {
+    return false;
+}
+//Deny right mouse click on photo
+function mousehandler(e) {
+    var myevent = (isNS) ? e : event;
+    var eventbutton = (isNS) ? myevent.which : myevent.button;
+    if ((eventbutton == 2) || (eventbutton == 3)) return false;
+};
 
 function ChangeUrl(title, url) {
     if (typeof (history.pushState) != "undefined") {

@@ -38,9 +38,10 @@
 
 .pswp--zoom-allowed .pswp__img {
   /* autoprefixer: off */
-  cursor: -webkit-zoom-in;
+  /*cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
-  cursor: zoom-in; }
+  cursor: zoom-in; 
+  */}
 
 .pswp--zoomed-in .pswp__img {
   /* autoprefixer: off */
@@ -64,7 +65,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: rgba(0,0,0,0.7);
   opacity: 0;
   -webkit-backface-visibility: hidden;
   will-change: opacity; }

@@ -45,6 +45,7 @@ header a img {
 footer {
     height: 100px; /* Высота низа */
     color: #6d7b85;
+	padding: 10px 0px;
 }
 
 
@@ -361,11 +362,6 @@ img
 }
 
 
-#vk_groups {
-    display: inline-block;
-    margin: auto;
-}
-
 img:hover
 {
     filter: none; /* IE6-9 */
@@ -388,17 +384,18 @@ img:hover
 /**
  * Social Share
  */
+#vk_groups {
+    display: inline-block;
+    margin: auto;
+}
 .social-box {
 	text-align: center;
     display: inline-block;
-	height: 60px;
 	margin-right: 8px;
-	vertical-align: top;
+	vertical-align: bottom;
 	letter-spacing: 0;
-    padding: 20px 20px 17px 18px;
+    padding: 10px;
 }
-
-
 
 @media only screen and (max-width: 361px) {
     .container {
@@ -409,7 +406,7 @@ img:hover
         width: 161px;
         margin: 0px 10px 0px 0px;
     }
-    
+
     nav.menu .menu-item {
         margin: 10px;
         display: block;
@@ -449,7 +446,7 @@ img:hover
     }
     .photo-vertical {
         display: block;
-        max-height: 400px;
+        max-width: 400px;
         margin: 5px auto;
     }
 
