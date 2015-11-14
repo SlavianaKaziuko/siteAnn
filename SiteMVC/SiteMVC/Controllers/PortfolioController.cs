@@ -92,8 +92,8 @@ namespace SiteMVC.Controllers
                     var height = objImage.Height;
 
                     var smallWidth = width > height
-                        ? Constant.ImageWidth + "x" + Constant.ImageWidth * height / width
-                        : (Constant.ImageHeight * width) / height + "x" + Constant.ImageHeight;
+                        ? Constant.ImageWidth + "x" + Constant.ImageWidth*height/width
+                        : (Constant.ImageHeight*width)/height + "x" + Constant.ImageHeight;
 
                     var style = width > height
                         ? "photo-horizontal"
@@ -114,7 +114,15 @@ namespace SiteMVC.Controllers
 
             ViewBag.Photos = photos;
 
-            return PartialView("Album");
+
+            if (Request.IsAjaxRequest())
+            {
+                ViewBag.Layout = null;
+                return PartialView("Album");
+            }
+
+            ViewBag.Layout = @"~/Views/_Layout.cshtml";
+            return View("Album");
         }
 
     }

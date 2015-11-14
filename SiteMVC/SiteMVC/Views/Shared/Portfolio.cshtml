@@ -9,7 +9,7 @@
     {
         
         <div class=" portfolioItem col-md-3 col-xs-6 col-sm-4 col-md-4"> <!--thumbnail  -->
-            <a class="albumItem" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#container" href="/Portfolio/Album?path=@album.Path" id="updated-container">
+        <a class="albumItem" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#container" href="/Portfolio/Album?path=@album.Path" id="updated-container" onclick="ChangeUrl('/Portfolio/Album?path=@album.Path', '/Portfolio/Album?path=@album.Path');">
                 <img class="img-responsive" src="@album.MainPhotoPath" alt="@album.Name"/>
                 <span>@album.Name</span>
             </a>
