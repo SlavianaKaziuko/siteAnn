@@ -211,7 +211,7 @@ img
     
 }
 
-.services li 
+.services > li 
 {
     text-align: left;
     padding: 20px 0px;

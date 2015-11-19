@@ -212,6 +212,12 @@
     <Content Include="Content\PortfolioContent\newborn.jpg" />
     <Content Include="Content\PortfolioContent\newborn_life.jpg" />
     <Content Include="Content\PortfolioContent\parents.jpg" />
+    <Content Include="Content\services\services_family.jpg" />
+    <Content Include="Content\services\services_individual.jpg" />
+    <Content Include="Content\services\services_lovestory.jpg" />
+    <Content Include="Content\services\services_maternity.jpg" />
+    <Content Include="Content\services\services_newborn.jpg" />
+    <Content Include="Content\services\services_wedding.jpg" />
     <Content Include="Content\vk.png" />
     <Content Include="Content\vk_back.png" />
     <Content Include="Global.asax" />
