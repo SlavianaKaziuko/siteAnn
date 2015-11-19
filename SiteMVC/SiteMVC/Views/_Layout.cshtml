@@ -49,7 +49,7 @@
         <div class="row">
             <nav class="menu">
                 <ul>
-                    <li class="menu-item" onclick="ChangeUrl('Portfolio', 'Portfolio');">
+                    <li class="menu-item" onclick="ChangeUrl('Portfolio', '/Portfolio');">
                         @Ajax.ActionLink("ПОРТФОЛИО", "Portfolio", "Portfolio", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>
@@ -57,15 +57,15 @@
                         @Ajax.ActionLink("ОТЗЫВЫ", "Responses", "Responses", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>*@
-                    <li class="menu-item" onclick="ChangeUrl('Services', 'Services');">
+                    <li class="menu-item" onclick="ChangeUrl('Services', '/Services');">
                         @Ajax.ActionLink("УСЛУГИ", "Services", "Services", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>
-                    <li class="menu-item" onclick="ChangeUrl('News', 'News');">
+                    <li class="menu-item" onclick="ChangeUrl('News', '/News');">
                         @Ajax.ActionLink("НОВОСТИ", "News", "News", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
                     <li class="menu-item separator">|</li>
-                    <li class="menu-item" onclick="ChangeUrl('Contacts', 'Contacts');">
+                    <li class="menu-item" onclick="ChangeUrl('Contacts', '/Contacts');">
                         @Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
                     </li>
 

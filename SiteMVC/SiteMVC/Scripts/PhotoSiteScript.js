@@ -20,7 +20,6 @@ $(function () {
 });
 
 $(document).ready(function() {
-    //Обработка нажатия на кнопку "Вверх"
     //var w = screen.width,
     //h = screen.height;
     //alert(w + 'x' + h);
@@ -48,29 +47,46 @@ $(document).ready(function() {
                 }
 
             });*/
-			
+
+
+    //Обработка нажатия на кнопку "Вверх"
     $("#up").click(function() {
         scrollUp();
     });
+});
+
+$(document).ajaxStart(function () {
+    document.body.style.cursor = "wait";
+});
+
+$(document).ajaxStop(function () {
+    document.body.style.cursor = "default";
+});
+
+$(document).ajaxComplete(function () {
+    document.body.style.cursor = "default";
 });
 
 //Deny right mouse click on photo
 function mischandler() {
     return false;
 }
+
+
 //Deny right mouse click on photo
 function mousehandler(e) {
     var myevent = (isNS) ? e : event;
     var eventbutton = (isNS) ? myevent.which : myevent.button;
     if ((eventbutton == 2) || (eventbutton == 3)) return false;
-};
+}
+
 
 function ChangeUrl(title, url) {
     if (typeof (history.pushState) != "undefined") {
         var obj = { Title: title, Url: url };
         history.pushState(obj, obj.Title, obj.Url);
     } else {
-        alert("Browser does not support HTML5.");
+        //alert("Browser does not support HTML5.");
     }
 }
 
