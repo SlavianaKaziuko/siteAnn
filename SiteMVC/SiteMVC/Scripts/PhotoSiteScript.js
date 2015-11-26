@@ -20,40 +20,26 @@ $(function () {
 });
 
 $(document).ready(function() {
-    //var w = screen.width,
-    //h = screen.height;
-    //alert(w + 'x' + h);
-	/*$('.zoom-gallery').magnificPopup({
-                delegate: 'a',
-                type: 'image',
-                closeOnContentClick: false,
-                closeBtnInside: false,
-                mainClass: 'mfp-with-zoom mfp-img-mobile',
-                image: {
-                    verticalFit: true,
-                    titleSrc: function (item) {
-                        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="' + item.el.attr('data-source') + '" target="_blank">image source</a>';
-                    }
-                },
-                gallery: {
-                    enabled: true
-                },
-                zoom: {
-                    enabled: true,
-                    duration: 300, // don't foget to change the duration also in CSS
-                    opener: function (element) {
-                        return element.find('img');
-                    }
-                }
-
-            });*/
-
-
     //Обработка нажатия на кнопку "Вверх"
-    $("#up").click(function() {
-        scrollUp();
-    });
+    $("#up").on("click", scrollUp);
+
+    bindEvents();
 });
+
+function bindEvents() {
+    $(window).off('hashchange');
+    $(window).on('hashchange', hashChanged);
+    $("#services>li>h3").off("click");
+    $("#services>li>h3").on("click", expandService);
+    hashChanged();
+}
+
+function hashChanged() {
+    if ($(top.location.hash).length > 0) {
+        $(top.location.hash).find("h3").trigger("click");
+        $("body,html").animate({ "scrollTop": $(top.location.hash).offset().top }, 500);
+    }
+}
 
 $(document).ajaxStart(function () {
     document.body.style.cursor = "wait";
@@ -63,8 +49,12 @@ $(document).ajaxStop(function () {
     document.body.style.cursor = "default";
 });
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
     document.body.style.cursor = "default";
+    if ($("#title").length > 0) {
+        $("title").text($("#title").text());
+    }
+    bindEvents();
 });
 
 //Deny right mouse click on photo
@@ -78,6 +68,7 @@ function mousehandler(e) {
     var myevent = (isNS) ? e : event;
     var eventbutton = (isNS) ? myevent.which : myevent.button;
     if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    return true;
 }
 
 
@@ -96,5 +87,18 @@ function scrollUp() {
     $("body,html").animate({ "scrollTop": 0 }, scrollTime);
 }
 
+function expandService(event) {
+    var curService = $(event.currentTarget);
+    var isExpanded = curService.next().hasClass("expanded") == true;
+    $("#services>li>div.expanded")
+        .slideUp(300)
+        .removeClass("expanded");
+
+    if (isExpanded) return false;
+
+    curService.next()
+        .slideDown(300);
+    setTimeout($.proxy(function() { $(this).next().addClass("expanded"); }, curService), 301);
+}
 
 
