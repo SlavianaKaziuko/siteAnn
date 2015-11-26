@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using SiteMVC.Models;
+﻿using System.Web.Mvc;
 
 namespace SiteMVC.Controllers
 {
@@ -10,14 +8,6 @@ namespace SiteMVC.Controllers
 
         public ActionResult Home()
         {
-            var photos = new List<PhotoItem>();
-            for (var i = 1; i < 13; i++)
-            {
-                photos.Add(new PhotoItem { Name = i + ".jpg", Path = "/Content/PortfolioContent/" + i + ".jpg" });
-            }
-
-            ViewBag.Photos = photos;
-
             return View("Home");
         }
 

@@ -1,5 +1,4 @@
-﻿@using SiteMVC.Models
-@{
+﻿@{
     ViewBag.Title = "Anna Protasova Photography";
     Layout = "~/Views/_Layout.cshtml";
 }
@@ -22,14 +21,6 @@
 		Если Вам интересно то, что я делаю, и Вы хотели бы со мной поработать - 
 		@Ajax.ActionLink("смело пишите мне)", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
 	</p>
-    @*@foreach (PhotoItem photo in ViewBag.Photos)
-    {
-        <div class="col-md-3 col-sm-4 col-xs-6">
-            <a class="thumbnail"  onclick="">
-                <img alt="@photo.Name" src="@photo.Path" />
-            </a>
-        </div>
-    }*@
 
 </div>
 
