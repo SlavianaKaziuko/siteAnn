@@ -32,6 +32,10 @@ function bindEvents() {
     $("#services>li>h3").off("click");
     $("#services>li>h3").on("click", expandService);
     hashChanged();
+    $(window).off('popstate');
+    $(window).on('popstate', function() {
+        location.reload();
+    });
 }
 
 function hashChanged() {
@@ -71,19 +75,19 @@ function mousehandler(e) {
     return true;
 }
 
-
 function ChangeUrl(title, url) {
     if (typeof (history.pushState) != "undefined") {
         var obj = { Title: title, Url: url };
-        history.pushState(obj, obj.Title, obj.Url);
+        history.pushState({ page: obj.Url, type: "page" }, obj.Title, obj.Url);
     } else {
         //alert("Browser does not support HTML5.");
     }
 }
 
+
 function scrollUp() {
     var curPos = $(document).scrollTop();
-    var scrollTime = curPos / 2;
+    var scrollTime = curPos / 5;
     $("body,html").animate({ "scrollTop": 0 }, scrollTime);
 }
 
@@ -98,7 +102,11 @@ function expandService(event) {
 
     curService.next()
         .slideDown(300);
-    setTimeout($.proxy(function() { $(this).next().addClass("expanded"); }, curService), 301);
+    setTimeout($.proxy(function () { $(this).next().addClass("expanded"); }, curService), 301);
+
+    var obj = { Title: curService.parent().attr("id"), Url: "/Services#" + curService.parent().attr("id") };
+    history.pushState(null, obj.Title, obj.Url);
+    return false;
 }
 
 
