@@ -33,8 +33,10 @@ function bindEvents() {
     $("#services>li>h3").on("click", expandService);
     hashChanged();
     $(window).off('popstate');
-    $(window).on('popstate', function() {
-        location.reload();
+    $(window).on('popstate', function () {
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            location.reload();
+        }
     });
 }
 

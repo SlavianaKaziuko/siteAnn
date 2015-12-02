@@ -118,11 +118,11 @@ namespace SiteMVC.Controllers
             if (Request.IsAjaxRequest())
             {
                 ViewBag.Layout = null;
-                return PartialView("Album");
+                return PartialView("Portfolio");
             }
 
             ViewBag.Layout = @"~/Views/_Layout.cshtml";
-            return View("Album");
+            return View("Portfolio");
         }
 
     }

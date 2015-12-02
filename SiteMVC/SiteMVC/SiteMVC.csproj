@@ -169,11 +169,21 @@
     <Content Include="Content\PhotoSwipe-master\dist\default-skin\default-skin.png" />
     <Content Include="Content\PhotoSwipe-master\dist\default-skin\default-skin.svg" />
     <Content Include="Content\PhotoSwipe-master\dist\default-skin\preloader.gif" />
-    <Content Include="Content\PhotoSwipe-master\dist\photoswipe-ui-default.js" />
-    <Content Include="Content\PhotoSwipe-master\dist\photoswipe-ui-default.min.js" />
-    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.css" />
-    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.js" />
-    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.min.js" />
+    <Content Include="Content\PhotoSwipe-master\dist\photoswipe-ui-default.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PhotoSwipe-master\dist\photoswipe-ui-default.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PhotoSwipe-master\dist\photoswipe.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\PhotoSwipe-master\Gruntfile.js" />
     <Content Include="Content\PhotoSwipe-master\src\css\default-skin\default-skin.png" />
     <Content Include="Content\PhotoSwipe-master\src\css\default-skin\default-skin.svg" />
