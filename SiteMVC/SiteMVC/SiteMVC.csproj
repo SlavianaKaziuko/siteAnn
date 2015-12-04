@@ -130,6 +130,8 @@
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Models\AlbumItem.cs" />
     <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\PackageRank.cs" />
     <Compile Include="Models\PhotoItem.cs" />
     <Compile Include="Bootstrapper\Bootstrapper.cs" />
     <Compile Include="Bootstrapper\Registrators\BundleConfig.cs" />
@@ -140,6 +142,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\MailSender.cs" />
   </ItemGroup>
@@ -271,6 +274,7 @@
     <Content Include="Content\PortfolioContent\wedding\rLCdFJ_Ac1Y.jpg" />
     <Content Include="Content\PortfolioContent\wedding\UfrG8A6SDsg.jpg" />
     <Content Include="Content\PortfolioContent\wedding\ZjjtPK_vmiI.jpg" />
+    <Content Include="Content\services\services.xml" />
     <Content Include="Content\services\services_family.jpg" />
     <Content Include="Content\services\services_individual.jpg" />
     <Content Include="Content\services\services_lovestory.jpg" />
