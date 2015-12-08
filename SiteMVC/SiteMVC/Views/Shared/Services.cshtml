@@ -6,13 +6,20 @@
 
 <div id="title">@ViewBag.Title</div>  
 
+@foreach (Service service in ViewBag.ServiceList)
+{
+    <a href="#@service.Id">
+        <h3>@service.Name</h3>
+    </a>
+}
+
 <ul id="services">
     @foreach (Service service in ViewBag.ServiceList)
     {
         <li id="@service.Id">
-            <h3>@service.Name</h3>
             <div>
                 <img alt="@service.Id" src="@service.ImgSource"/>
+                <h3>@service.Name</h3>
                 <div>
                     @foreach (var pack in service.Packages)
                     {
@@ -26,9 +33,9 @@
                             </ul>
                         </div>
                     }
-                @Ajax.ActionLink("посмотреть портфолио", "Album", "Portfolio", new { path = service.Id }, 
-                new AjaxOptions { UpdateTargetId = "container" }, 
-                new { onclick="ChangeUrl('/Portfolio/Album?path=" + service.Id + "', '/Portfolio/Album?path=" + service.Id + "');"})
+                    @Ajax.ActionLink("посмотреть портфолио", "Album", "Portfolio", new {path = service.Id},
+                        new AjaxOptions {UpdateTargetId = "container"},
+                        new {onclick = "ChangeUrl('/Portfolio/Album?path=" + service.Id + "', '/Portfolio/Album?path=" + service.Id + "');"})
                 </div>
             </div>
         </li>
