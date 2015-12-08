@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
@@ -29,16 +30,29 @@ namespace SiteMVC.Controllers
                     var path = "/Content/services/services_" + id + ".jpg";
 
                     var packages = new List<Package>();
-                    var xmlElement = service.FirstChild["Packages"];
+                    var xmlElement = service["Packages"];
                     if (xmlElement != null)
                         foreach (XmlNode package in xmlElement.ChildNodes)
                         {
+                            var list = new List<string>();
+                            if (package.Attributes == null) continue;
+                            var rank = (PackageRank) Convert.ToInt32(package.Attributes["rank"].Value);
+                            var packageName = rank == PackageRank.Mini
+                                ? "Пакет «Мини»"
+                                : rank == PackageRank.Standart
+                                    ? "Пакет «Стандарт»"
+                                    : rank == PackageRank.Super
+                                        ? "Пакет «Супер»"
+                                        : string.Empty;
+
+                            list.AddRange(from XmlNode item in package.ChildNodes select item.InnerText);
+
                             packages.Add(new Package
                             {
-                                
+                                Rank = rank,
+                                Name = packageName,
+                                ItemsList = list
                             });
-
-                        
                         }
 
 
@@ -50,9 +64,9 @@ namespace SiteMVC.Controllers
                         Packages = packages
                     });
                 }
-
             }
 
+            ViewBag.ServiceList = services;
 
             if (Request.IsAjaxRequest())
             {

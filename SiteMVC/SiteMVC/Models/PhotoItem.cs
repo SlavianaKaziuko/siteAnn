@@ -10,6 +10,8 @@
 
         public int Width { get; set; }
 
+        public string ImageSize { get; set; }
+
         public string Size { get; set; }
 
         public string SmallSize { get; set; }

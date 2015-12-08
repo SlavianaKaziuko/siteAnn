@@ -161,6 +161,7 @@
     </Content>
     <Content Include="Content\images\gotop.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo_new.ico" />
     <Content Include="Content\images\logo_new.png" />
     <Content Include="Content\images\logo_small.jpg" />
     <Content Include="Content\images\logo_vk.png" />
@@ -221,18 +222,18 @@
     <Content Include="Content\PhotoSwipe-master\website\test\vertical-swipe.jpg" />
     <Content Include="Content\PhotoSwipe-master\website\_includes\menu.html" />
     <Content Include="Content\PhotoSwipe-master\website\_layouts\default.html" />
-    <Content Include="Content\PortfolioContent\family\0+.jpg" />
+    <Content Include="Content\PortfolioContent\family\01.jpg" />
     <Content Include="Content\PortfolioContent\family\0.jpg" />
     <Content Include="Content\PortfolioContent\family\5VUH9jQYa_o.jpg" />
     <Content Include="Content\PortfolioContent\family\ADCFu2EjksU.jpg" />
     <Content Include="Content\PortfolioContent\family\info.xml" />
-    <Content Include="Content\PortfolioContent\family\kZWHfjpNKAo.jpg" />
     <Content Include="Content\PortfolioContent\family\lWR1xfPoq1I.jpg" />
     <Content Include="Content\PortfolioContent\family\TyU9uux-m90.jpg" />
     <Content Include="Content\PortfolioContent\family\vaybJSwHRsE.jpg" />
     <Content Include="Content\PortfolioContent\individual\0.jpg" />
     <Content Include="Content\PortfolioContent\individual\1.jpg" />
     <Content Include="Content\PortfolioContent\individual\2.jpg" />
+    <Content Include="Content\PortfolioContent\individual\3.jpg" />
     <Content Include="Content\PortfolioContent\individual\4.jpg" />
     <Content Include="Content\PortfolioContent\individual\5.jpg" />
     <Content Include="Content\PortfolioContent\individual\6.jpg" />
@@ -248,7 +249,7 @@
     <Content Include="Content\PortfolioContent\maternity\1.jpg" />
     <Content Include="Content\PortfolioContent\maternity\10.jpg" />
     <Content Include="Content\PortfolioContent\maternity\11.jpg" />
-    <Content Include="Content\PortfolioContent\maternity\2.jpg" />
+    <Content Include="Content\PortfolioContent\maternity\9.jpg" />
     <Content Include="Content\PortfolioContent\maternity\3.jpg" />
     <Content Include="Content\PortfolioContent\maternity\7.jpg" />
     <Content Include="Content\PortfolioContent\maternity\8.jpg" />

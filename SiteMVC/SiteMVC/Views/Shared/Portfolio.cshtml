@@ -12,8 +12,8 @@
     <div id="demo-test-gallery" class="demo-gallery">
         @foreach (PhotoItem photo in ViewBag.Photos)
         {
-            <a href="@photo.Path" data-size="@photo.Size" data-med="@photo.Path" data-med-size="@photo.SmallSize" data-author="Anna Protasova">
-                <img src="@photo.Path" alt=""  class="@photo.Style"/>
+            <a href="@photo.Path" data-size="@photo.Size"data-med="@photo.Path" data-med-size="@photo.SmallSize" data-author="Anna Protasova">
+                <img src="@photo.Path" alt=""  class="@photo.Style" style="@photo.ImageSize"  />
             </a>
 
         }

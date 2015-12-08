@@ -1,10 +1,42 @@
-﻿@{
+﻿@using SiteMVC.Models
+@{
     ViewBag.Title = "Услуги";
     Layout = ViewBag.Layout;
 }
 
 <div id="title">@ViewBag.Title</div>  
 
+<ul id="services">
+    @foreach (Service service in ViewBag.ServiceList)
+    {
+        <li id="@service.Id">
+            <h3>@service.Name</h3>
+            <div>
+                <img alt="@service.Id" src="@service.ImgSource"/>
+                <div>
+                    @foreach (var pack in service.Packages)
+                    {
+                        <div class="package">
+                            <h4><i>@pack.Name</i></h4>
+                            <ul>
+                                @foreach (var item in pack.ItemsList)
+                                {
+                                    <li>@item</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                @Ajax.ActionLink("посмотреть портфолио", "Album", "Portfolio", new { path = service.Id }, 
+                new AjaxOptions { UpdateTargetId = "container" }, 
+                new { onclick="ChangeUrl('/Portfolio/Album?path=" + service.Id + "', '/Portfolio/Album?path=" + service.Id + "');"})
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
+
+<!--
 @*<h2>ВИДЫ ФОТОУСЛУГ:</h2>
 <br />*@
 <ul id="services">
@@ -241,7 +273,7 @@
         </div>     
     </li>
 </ul> 
-
+-->
 <br/>
 <br/>
 Для получения более подробной информации, 
