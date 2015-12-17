@@ -237,6 +237,18 @@ img
     font-size: 18px;
 }
 
+#services .packageHorizontal
+{
+    display: inline-block;
+    margin: auto;
+    margin: 20px;
+    margin-left: 3%;
+    margin-right: 0;
+    width: 30%;
+    vertical-align: top;
+    text-align: left;
+}
+
 #services .package
 {
     display: inline-block;

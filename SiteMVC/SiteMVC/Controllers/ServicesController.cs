@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
@@ -26,8 +27,9 @@ namespace SiteMVC.Controllers
                 {
                     if (service.Attributes == null) continue;
                     var id = service.Attributes["id"].Value;
-                    var name = service.Attributes["name"].Value;;
+                    var name = service.Attributes["name"].Value;
                     var path = "/Content/services/services_" + id + ".jpg";
+                    var image = Image.FromFile(path);
 
                     var packages = new List<Package>();
                     var xmlElement = service["Packages"];
@@ -60,7 +62,8 @@ namespace SiteMVC.Controllers
                     {
                         Id = id,
                         Name = name,
-                        ImgSource = path,
+                        ImgPath = path,
+                        ImgSource = image,
                         Packages = packages
                     });
                 }

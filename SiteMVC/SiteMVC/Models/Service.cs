@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace SiteMVC.Models
 {
@@ -10,6 +11,8 @@ namespace SiteMVC.Models
 
         public List<Package> Packages { get; set; } 
 
-        public string ImgSource { get; set; }
+        public string ImgPath { get; set; }
+
+        public Image ImgSource { get; set; }
     }
 }

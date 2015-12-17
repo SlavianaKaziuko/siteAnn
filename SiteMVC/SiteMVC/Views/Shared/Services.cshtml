@@ -18,12 +18,14 @@
     {
         <li id="@service.Id">
             <div>
+                <img alt="@service.Id" src="@service.ImgPath"/>
                 <img alt="@service.Id" src="@service.ImgSource"/>
                 <h3>@service.Name</h3>
                 <div>
                     @foreach (var pack in service.Packages)
                     {
-                        <div class="package">
+                        
+                        <div class="packageHorizontal">
                             <h4><i>@pack.Name</i></h4>
                             <ul>
                                 @foreach (var item in pack.ItemsList)
