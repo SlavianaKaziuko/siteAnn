@@ -1,0 +1,11 @@
+﻿@model IEnumerable<SiteMVC.Models.Service>
+
+@foreach (var item in Model)
+{
+    <li onclick="ChangeUrl('@item.Name','/Services?type=@item.Id')">
+        @Ajax.ActionLink(item.Name, "Services", "Services",
+        new { type = item.Id },
+        new AjaxOptions { UpdateTargetId = "container" },
+        new { id = "updated-container" })
+    </li>
+}

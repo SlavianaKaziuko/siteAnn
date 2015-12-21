@@ -14,7 +14,7 @@ html {
 
 body {
     min-width: 500px;
-    background-color: #f5f5f4;
+    background-color: white;/*#f5f5f4;*/
     font-family: "Constantia";
     color: #525152;
     text-align: center;
@@ -41,38 +41,64 @@ header a {
     margin: 0 80px 0 0;
 }
 
-header a img {
-    width: 161px;
-    height: 140px;
-}
-
 footer {
     height: 100px; /* Высота низа */
     color: #6d7b85;
 	padding: 10px 0px;
 }
 
+#logo {
+    max-width: 160px;
+}
+    
+ /* подменю, скрыто по умолчанию */
+.menu-item ul {
+    width:300px;
+    position:absolute;
+    display:none;
+    margin:0 0 0 -120px;
+    padding:0;
+    list-style:none;
+}  
+
+.menu-item ul li {
+    position:relative;
+    border-top:1px solid #fff;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 500;
+}  
+
+/* display block will make the link fill the whole area of LI */
+/* отображение ссылки в меню как block, чтобы заполнить пространство в LI */
+.menu-item ul a {
+    display:block;
+    padding: 8px 5px;
+    color:#666;
+}  
 
 nav.menu
 {
+    position:static;
     min-width: 150px;
     margin-bottom: 0px;
     vertical-align: middle;
     margin: 5px auto;
-    max-width: 100%;
+    /*max-width: 80%;*/
 }
 
 nav.menu .menu-item
 {
     margin: 0 10px;
     display: inline-block;
+    cursor: pointer;
 }
 
 nav.menu .menu-item.separator
 {
     display: inline-block;
-    padding: 0px;
-    margin: 0px -2px;
+    padding: 0;
+    margin: 0 -2px;
     color: gray;
 }
 
@@ -91,8 +117,7 @@ nav.menu .menu-item.separator
 
 .menu a {
     text-decoration: none;  
-        margin: 0px -2px;
-  
+    margin: 0px -2px;
 }
 .menu ul
 {
@@ -127,27 +152,24 @@ hr {
     color: white;
 }
 
-
-
 .home img 
 {
-    width: 50%;
+    width: 49%;
     max-width: 600px;   
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
  
 .home p 
 {
 	display: inline-block;
-    padding-top: 50px;
 	padding-left: 50px;
     font-size: 18px;
     color: gray;
 	width: 50%; 
 	margin:auto;
 	text-align:left;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 .home span
@@ -168,11 +190,10 @@ img
 {
     display: inline-block;
     margin: auto;
-    /*align-content: center;*/   
+    width: 100%;
 }
 
 #container {
-    /*min-height: 700px;*/
     width: 86%;
     padding: 30px 0 0 0;
     font-size: 16px;
@@ -194,7 +215,15 @@ img
     display: block;
     margin: auto;
     max-height: 900px;
+    max-width: 90%;
+}
+
+#services img.vertical
+{
+    display: inline-block;
+    margin: auto;
     max-width: 70%;
+    max-width: 900px;
 }
 
 #services div > ul {
@@ -203,10 +232,11 @@ img
 
 #services > li 
 {
-    display: inline-block;
+    display: block;
     padding: 20px 40px;
     list-style-type: none;
     text-align: center;
+    width: auto;
 }
 
 #services > li > h3
@@ -224,14 +254,13 @@ img
 }
 
 #services > li > div {
-    display: none;
+    /*display: none;*/
     border-bottom: 1px dotted white;
     padding: 35px 0;
 }
 
 #services > li > div > div {
     display: block;
-    /*vertical-align: middle;*/
     width: 100%;
     margin: auto;
     font-size: 18px;
@@ -239,14 +268,19 @@ img
 
 #services .packageHorizontal
 {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+#services .packageVertical
+{
     display: inline-block;
     margin: auto;
     margin: 20px;
     margin-left: 3%;
     margin-right: 0;
     width: 30%;
-    vertical-align: top;
-    text-align: left;
+    vertical-align: middle;
 }
 
 #services .package
@@ -261,6 +295,17 @@ img
     text-align: left;
 }
 
+#services .packageVertical .package
+{
+    display: block;
+    margin: auto;
+    margin: 20px;
+    margin-left: 3%;
+    margin-right: 0;
+    width: 100%;
+}
+
+
 #services .package > h4 {
     text-align: center;
 }
@@ -268,26 +313,6 @@ img
 #services a {
     float: right;
 }
-
-
-/*#services li:nth-child(even) div
-{
-    padding-right: 30px;
-}
-
-#services li:nth-child(even) img
-{
-    right: 0px;
-}
-
-#services li:nth-child(odd) div
-{
-    padding-left: 30px;
-}
-#services li:nth-child(odd) img
-{
-    left: 0px;
-}*/
 
 
 .contactMe {
@@ -300,7 +325,8 @@ img
 .contactMe input, .contactMe textarea {
     width: 400px;
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid #A9A9BB;
+    padding-left: 10px;
     border-radius: 3px;
     -moz-border-radius: 3px;
     margin-bottom: 5px;
@@ -308,7 +334,7 @@ img
 
 .contactMe h3 {
     padding-bottom: 5px;
-    border-bottom: 1px solid white; 
+    border-bottom: 1px solid #A9A9BB; 
 }
 
 .contactMe h4 {
@@ -320,7 +346,7 @@ img
 .contactMe button{
     width: 150px;
     background-color: transparent;
-    border: 1px solid gray;
+    border: 1px solid #A9A9BB;
     border-radius: 3px;
     -moz-border-radius: 3px;
 }
@@ -333,16 +359,13 @@ img
 
 .albumItem 
 {
-    font-size: 22px;
 	width: 98%;
 	position: relative; 
 	display: inline-block; 
-	color: lightblue; 
-	/*width: 226px; 
-	text-decoration: none;*/ 
 	cursor: pointer;
 	padding: 0px;
 	margin: 0px;
+    text-decoration: none;
 }
 .albumItem:hover 
 {
@@ -351,20 +374,19 @@ img
 
 .albumItem span 
 {
-	display: none; 
-	width: 100%;
-	position: absolute; 
-	bottom: 0px;
+    font-size: 20px;
+	color: darkgray;
+    padding: 0 20px;
+	display: block; 
+	background: transparent;
+    height: 50px;
+    vertical-align: middle;
+    text-decoration: none;
 }
 
 .albumItem:hover span 
 {
-	display: block; 
-	/*border: 3px solid #e5e5e5; */
-	color: #636363;
-	opacity: 0.7; 
-	background: #dddddd; 
-	filter: alpha(opacity=70)
+	color: #525152;
 }
 
 .albumDescription {
@@ -418,22 +440,16 @@ img
     display: inline-block;
 }
 
-
-/*.photo-vertical ~ a > img {
-    display: inline-block;
-    width: 60%
-}*/
-
-
 #up {  
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     position: fixed;
-    bottom: 10px;
-    right: 13px;
-    border-radius: 30px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 20px;
     z-index: 1001;
     background: #ffffff url("../Content/images/gotop.png") center center no-repeat;
+    border: #dddddd 1px solid;
 }
 #up:hover {
     cursor: pointer;
@@ -482,6 +498,9 @@ img:hover
 }
 
 @media only screen and (max-width: 361px) {
+    body {
+        width: 99%;
+    }
     #container {
         width: 96%;
     }
@@ -491,6 +510,11 @@ img:hover
         margin: 0px 10px 0px 0px;
     }
 
+    .menu-item ul li a
+    {
+        margin: 0;
+        width: 100%;
+    }
     nav.menu .menu-item {
         margin: 10px;
         display: block;
@@ -523,18 +547,40 @@ img:hover
         font-size: 27px;
     }
 
-    .photo-horizontal {
-        display: block;
-        max-width: 400px;
-        margin: 5px auto;
+    .album
+    {
+        width: 100%;
+        margin: auto;
     }
-    .photo-vertical {
+    .photo-horizontal, .photo-alone, .photo-item, .photo-vertical {
         display: block;
-        max-width: 400px;
+        max-width: 95%;
         margin: 5px auto;
     }
 
     .albumDescription {
         width: 360px;
+    }
+    #services {
+        width: 100%;
+        margin: 1px;
+    }
+    #services > li
+    {
+        display: block;
+        padding: 10px 0;
+    }
+    #services .package, #services .packageVertical, #services .packageVertical .package
+    {
+        display: inline-block;
+        margin: auto;
+        width: 95%;
+        text-align: left;
+    }
+    #services img, #services img.vertical
+    {
+        display: block;
+        margin: auto;
+        max-width: 90%;
     }
 }

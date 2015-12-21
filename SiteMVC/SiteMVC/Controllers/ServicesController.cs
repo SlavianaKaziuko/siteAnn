@@ -14,7 +14,7 @@ namespace SiteMVC.Controllers
         //
         // GET: /Services/
 
-        public ActionResult Services()
+        public ActionResult Services(string type)
         {
             var portfolioDir = new DirectoryInfo(Server.MapPath("~/") + "\\Content\\services");
             var services = new List<Service>();
@@ -27,9 +27,20 @@ namespace SiteMVC.Controllers
                 {
                     if (service.Attributes == null) continue;
                     var id = service.Attributes["id"].Value;
+                    if (type!=null && id != type) continue;
                     var name = service.Attributes["name"].Value;
                     var path = "/Content/services/services_" + id + ".jpg";
-                    var image = Image.FromFile(path);
+                    var image = Image.FromFile(Server.MapPath(path));
+                    var imageBase64 = "data:image/jpg;base64, ";
+                    using (var ms = new MemoryStream())
+                    {
+                        // Convert Image to byte[]
+                        image.Save(ms, image.RawFormat);
+                        var imageBytes = ms.ToArray();
+
+                        // Convert byte[] to Base64 String
+                        imageBase64 += Convert.ToBase64String(imageBytes);
+                    }
 
                     var packages = new List<Package>();
                     var xmlElement = service["Packages"];
@@ -63,8 +74,10 @@ namespace SiteMVC.Controllers
                         Id = id,
                         Name = name,
                         ImgPath = path,
-                        ImgSource = image,
-                        Packages = packages
+                        ImgSource = imageBase64,
+                        Packages = packages,
+                        StylePackages = image.Height > image.Width ? "packageVertical" : "packageHorizontal",
+                        ImgStyle = image.Height > image.Width ? "vertical" : ""
                     });
                 }
             }
@@ -80,6 +93,5 @@ namespace SiteMVC.Controllers
             ViewBag.Layout = "~/Views/_Layout.cshtml";
             return View();
         }
-
     }
 }

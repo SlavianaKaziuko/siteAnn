@@ -6,6 +6,8 @@ namespace SiteMVC.Controllers
     {
         // GET: /Home/
 
+
+
         public ActionResult Home()
         {
             return View("Home");

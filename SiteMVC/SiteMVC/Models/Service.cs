@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 
 namespace SiteMVC.Models
 {
@@ -13,6 +12,10 @@ namespace SiteMVC.Models
 
         public string ImgPath { get; set; }
 
-        public Image ImgSource { get; set; }
+        public string ImgSource { get; set; }
+
+        public string ImgStyle { get; set; }
+
+        public string StylePackages { get; set; }
     }
 }

@@ -23,15 +23,27 @@ $(document).ready(function() {
     //Обработка нажатия на кнопку "Вверх"
     $("#up").on("click", scrollUp);
 
+
     bindEvents();
 });
 
 function bindEvents() {
     $(window).off('hashchange');
     $(window).on('hashchange', hashChanged);
-    $("#services>li>h3").off("click");
-    $("#services>li>h3").on("click", expandService);
-    hashChanged();
+    //$("#services>li>h3").off("click");
+    //$("#services>li>h3").on("click", expandService);
+    $('nav .menu-item').off('click', showSubmenu);
+    $('nav .menu-item').on('click', showSubmenu);
+    $('nav .menu-item').hover(showSubmenu()
+        //function () {
+        //    //показать подменю
+        //    $('ul', this).slideDown(100);
+        //},
+        //function () {
+        //    //скрыть подменю
+        //    $('ul', this).slideUp(100);
+        //}
+    );    hashChanged();
     $(window).off('popstate');
     $(window).on('popstate', function () {
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -102,6 +114,17 @@ function ChangeUrl(title, url) {
     }
 }
 
+function showSubmenu() {
+    var isExpanded = $('ul', this).hasClass("expanded") == true;
+    //показать подменю
+    if (isExpanded) {
+        $('ul', this).slideUp(100);
+        $('ul', this).removeClass("expanded");
+    } else {
+        $('ul', this).slideDown(100);
+        $('ul', this).addClass("expanded");
+    }
+}
 
 function scrollUp() {
     var curPos = $(document).scrollTop();

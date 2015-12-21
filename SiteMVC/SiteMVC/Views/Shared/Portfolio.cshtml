@@ -9,7 +9,7 @@
 {
     <h2>@ViewBag.Name</h2>
     <p class="albumDescription">@ViewBag.Description</p>
-    <div id="demo-test-gallery" class="demo-gallery">
+    <div id="demo-test-gallery" class="demo-gallery album">
         @foreach (PhotoItem photo in ViewBag.Photos)
         {
             <a href="@photo.Path" data-size="@photo.Size"data-med="@photo.Path" data-med-size="@photo.SmallSize" data-author="Anna Protasova">
@@ -26,11 +26,12 @@
     <div class="row">
         @foreach (AlbumItem album in ViewBag.Album)
         {
-            if (i%3 == 0)
+            @*if (i%3 == 0)
             {
                 @:</div><div class="row">
             }
-            <!--xs (phones), sm (tablets), md (desktops), and lg (larger desktops)-->
+            *@
+        <!--xs (phones), sm (tablets), md (desktops), and lg (larger desktops)-->
             <div class="portfolioItem col-md-3 col-xs-6 col-lg-4">
                 <!--thumbnail  -->
                 <a class="albumItem" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#container" href="/Portfolio/Album?path=@album.Path" id="updated-container" onclick=" ChangeUrl('/Portfolio/Album?path=@album.Path', '/Portfolio/Album?path=@album.Path'); ">

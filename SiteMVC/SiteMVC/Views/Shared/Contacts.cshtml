@@ -6,35 +6,48 @@
 
 <div id="title">@ViewBag.Title</div>  
 
-♥ ♥ ♥ 
-<br />
-<br />
-<div class="contactMe">
-    <h3>
-        Свяжитесь со мной
-    </h3>
-    <h4>
-        <a href="http://vk.com/write44851386" target="_blank">
-            Напишите ВКонтакте
-        </a>
-    </h4>
-    <h4>
-        <a href="tel:+375(29)5405546">
-            Позвоните: +375(29) 540-55-46 (МТС)
-        </a>
-    </h4>
-    <h4>
-        <a href="skype:opps1987?chat">
-            Свяжитесь в скайпе
-        </a>
-    </h4>
-    
+<div class="home">
+    <img alt="Ann" src="/Content/images/Ann.jpg" />
+	<p>
+        <span>З</span>дравствуйте и добро пожаловать на мой сайт! 
+		<br/>
+		Меня зовут <span>Анна</span>, и я очень люблю фотографировать. 
+		<br/>
+		<br/>
+		Мне нравится видеть счастье в кадре и дарить его окружающим. 
+		<br/><br/>
+		Нахожу вдохновение в своей семье, в знакомствах с новыми открытыми и интересными людьми, музыке и во всем прекрасном, что меня окружает.
+		<br/><br/>
+		Живу в Могилеве, но всегда готова улететь хоть на край света ради красивых кадров.
+		<br/><br/>
+	    Если Вам интересно то, что я делаю, и Вы хотели бы со мной поработать - 
+        <a href="#contactMe">смело пишите мне)</a>
+	</p>
 </div>
-    
-<div class="contactMe">
-    <h3>
-        Или отправьте мне сообщение
-    </h3>
+
+<br />
+♥ ♥ ♥ 
+<div id="contactMe">
+    <div class="contactMe">
+        <h3>Свяжитесь со мной
+        </h3>
+        <h4>
+            <a href="http://vk.com/write44851386" target="_blank">Напишите ВКонтакте
+            </a>
+        </h4>
+        <h4>
+            <a href="tel:+375(29)5405546">Позвоните: +375(29) 540-55-46 (МТС)
+            </a>
+        </h4>
+        <h4>
+            <a href="skype:opps1987?chat">Свяжитесь в скайпе
+            </a>
+        </h4>
+    </div>
+
+    <div class="contactMe">
+        <h3>Или отправьте мне сообщение
+        </h3>
 
     @if (ViewBag.ModelEmail.Success)
     {
@@ -46,25 +59,24 @@
         using (Html.BeginForm("Contacts", "Contacts", FormMethod.Post))
         {
             <div>
-                @Html.TextBoxFor(m => m.From, new {required = "", placeholder="Email"})
+                @Html.TextBoxFor(m => m.From, new { placeholder = "Email"})
                 @Html.ValidationMessageFor(m => m.From)
-            </div>            
+            </div>
             <div>
-                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder="Имя Фамилия"})
+                @Html.TextBoxFor(m => m.FromName, new {required = "", placeholder = "Имя Фамилия"})
                 @Html.ValidationMessageFor(m => m.FromName)
-            </div> 
+            </div>
             <div class="">
-                @Html.TextBoxFor(m => m.Telephone, new {required = "", placeholder="Телефон"})
+                @Html.TextBoxFor(m => m.Telephone, new {required = "", placeholder = "Телефон"})
                 @Html.ValidationMessageFor(m => m.Telephone)
-            </div>    
+            </div>
             <br style="clear: both;">
-            <div>
-                @Html.TextAreaFor(m => m.Body, new {required = "", placeholder="Текст сообщения..."})
-                @Html.ValidationMessageFor(m => m.Body)
-            </div>    
-            <button type="submit" id="sendbutton">Отправить</button>
+        <div>
+            @Html.TextAreaFor(m => m.Body, new {required = "", placeholder = "Текст сообщения..."})
+            @Html.ValidationMessageFor(m => m.Body)
+        </div>    
+        <button type="submit" id="sendbutton">Отправить</button>
         }
-    }
-  
+        }
+    </div>
 </div>
-   

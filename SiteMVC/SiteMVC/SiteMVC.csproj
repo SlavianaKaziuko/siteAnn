@@ -124,6 +124,7 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceMenuController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ResponsesController.cs" />
@@ -275,7 +276,9 @@
     <Content Include="Content\PortfolioContent\wedding\rLCdFJ_Ac1Y.jpg" />
     <Content Include="Content\PortfolioContent\wedding\UfrG8A6SDsg.jpg" />
     <Content Include="Content\PortfolioContent\wedding\ZjjtPK_vmiI.jpg" />
-    <Content Include="Content\services\services.xml" />
+    <Content Include="Content\services\services.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\services\services_family.jpg" />
     <Content Include="Content\services\services_individual.jpg" />
     <Content Include="Content\services\services_lovestory.jpg" />
@@ -344,6 +347,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\News.cshtml" />
     <Content Include="Views\Shared\error.cshtml" />
+    <Content Include="Views\Shared\ServiceMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

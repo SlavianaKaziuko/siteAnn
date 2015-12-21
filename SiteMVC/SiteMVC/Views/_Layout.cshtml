@@ -31,67 +31,58 @@
         <link href="/Content/PhotoSwipe-master/dist/default-skin/default-skin.css?v=4.1.0-1.0.4" rel="stylesheet" />
         <script src="/Content/PhotoSwipe-master/dist/photoswipe.min.js?v=4.1.0-1.0.4"></script>
         <script src="/Content/PhotoSwipe-master/dist/photoswipe-ui-default.min.js?v=4.1.0-1.0.4"></script>
-        <!--    <script src="//use.typekit.net/snf1yod.js"></script>
-            <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
-            <link rel="canonical" href="http://photoswipe.com">-->
-        <!--Photo swiping-->
-	
 
     </head>
 <body>
-        @Scripts.Render(ScriptBundles.JQuery)
-        @Scripts.Render(ScriptBundles.Bootstrap)
-        @Scripts.Render(ScriptBundles.Default)
-        @RenderSection("scripts", false)
-
-        <header>
-            <a href="@Url.Action("Home", "Home")">
-                <img alt="logo" src="/Content/images/logo_new.png" />
-            </a>
-            <div class="row">
-                <nav class="menu">
+    <header>
+        <a href="@Url.Action("Home", "Home")">
+            <img id="logo" alt="logo" src="/Content/images/logo_new.png" />
+        </a>
+        <nav class="menu">
+            <ul>
+                <li class="menu-item" onclick="ChangeUrl('Portfolio', '/Portfolio');">
+                    @Ajax.ActionLink("ПОРТФОЛИО", "Portfolio", "Portfolio", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
+                </li>
+                <li class="menu-item separator">|</li>
+                <li class="menu-item" onclick="$('ul', this).slideDown(100);">
+                    УСЛУГИ
                     <ul>
-                        <li class="menu-item" onclick="ChangeUrl('Portfolio', '/Portfolio');">
-                            @Ajax.ActionLink("ПОРТФОЛИО", "Portfolio", "Portfolio", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-                        </li>
-                        <li class="menu-item separator">|</li>
-                        <li class="menu-item" onclick="ChangeUrl('Services', '/Services');">
-                            @Ajax.ActionLink("УСЛУГИ", "Services", "Services", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-                            
-                        </li>
-                        <li class="menu-item separator">|</li>
-                        <li class="menu-item" onclick="ChangeUrl('News', '/News');">
-                            @Ajax.ActionLink("НОВОСТИ", "News", "News", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-                        </li>
-                        <li class="menu-item separator">|</li>
-                        <li class="menu-item" onclick="ChangeUrl('Contacts', '/Contacts');">
-                            @Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-                        </li>
-
+                        @{Html.RenderAction("ServiceMenu", "ServiceMenu");}
                     </ul>
-                </nav>
-            </div>
-        </header>
-        <div id="container">
-            @RenderBody()
+                </li>
+                <li class="menu-item separator">|</li>
+                <li class="menu-item" onclick="ChangeUrl('News', '/News');">
+                    @Ajax.ActionLink("НОВОСТИ", "News", "News", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
+                </li>
+                <li class="menu-item separator">|</li>
+                <li class="menu-item" onclick="ChangeUrl('Contacts', '/Contacts');">
+                    @Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
+                </li>
+
+            </ul>
+        </nav>
+        <div class="row">
         </div>
+    </header>
+    <div id="container">
+        @RenderBody()
+    </div>
 
-        <footer>
-            <div class="social-box">
-                <a href="http://vk.com/protasova_photo" target="_blank">
-                    <img src="http://vk.com/images/dev_logo_vk.png" alt="vk" /></a>
-            </div>
-            <br />
-            <!-- Put this script tag to the place, where the Share button will be -->
-            <script type="text/javascript">
-                document.write(VK.Share.button({ url: 'http://annaprotasova.by', image: 'http://annaprotasova.by/Content/images/logo_vk.png' }, { type: "", text: "Поделиться" }));
+    <footer>
+        <div class="social-box">
+            <a href="http://vk.com/protasova_photo" target="_blank">
+                <img src="http://vk.com/images/dev_logo_vk.png" alt="vk" /></a>
+        </div>
+        <br />
+        <!-- Put this script tag to the place, where the Share button will be -->
+        <script type="text/javascript">
+            document.write(VK.Share.button({ url: 'http://annaprotasova.by', image: 'http://annaprotasova.by/Content/images/logo_vk.png' }, { type: "", text: "Поделиться" }));
         </script>
-            <br />
+        <br />
 
-            <div>
-                &copy; @DateTime.Now.Year  Фотограф Анна Протасова | Могилев
-       
-            </div>
+        <div>
+            &copy; @DateTime.Now.Year  Фотограф Анна Протасова | Могилев
+        </div>
         </footer>
         <div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="pswp__bg" style=""></div>
@@ -108,7 +99,7 @@
                         <!--<button class="pswp__button pswp__button--share" title="Share"></button>-->
                         <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
                         <!--<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>-->
-                        
+
                         <div class="pswp__preloader">
                             <div class="pswp__preloader__icn">
                                 <div class="pswp__preloader__cut">
