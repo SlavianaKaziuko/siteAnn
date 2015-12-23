@@ -156,6 +156,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\homeImages\services_family.jpg" />
+    <Content Include="Content\homeImages\services_lovestory.jpg" />
+    <Content Include="Content\homeImages\services_newborn.jpg" />
+    <Content Include="Content\homeImages\services_wedding.jpg" />
     <Content Include="Content\images\Ann.jpg" />
     <Content Include="Content\images\fancybox_sprite.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -291,6 +295,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Shared\Home.cshtml" />
     <Content Include="Views\Shared\Contacts.cshtml" />
@@ -327,6 +332,7 @@
     <Content Include="Scripts\Carousel.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\fonts\andantino-script.ttf" />
     <None Include="Properties\PublishProfiles\PublishToHB.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />

@@ -1,4 +1,12 @@
-﻿*, *:before, *:after
+﻿@font-face {
+    font-family: 'Andantino script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Andantino script'), local('Andantinoscript-Regular'),
+        url(fonts/andantino-script.ttf) format('truetype');
+}
+
+*, *:before, *:after
 {
     /* Chrome 9-, Safari 5-, iOS 4.2-, Android 3-, Blackberry 7- */
     -webkit-box-sizing: border-box;
@@ -127,6 +135,24 @@ nav.menu .menu-item.separator
     min-font-size: 12px;
 }
 
+.slide {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.slide .item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel .carousel-inner .item {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
 a {
     color: gray;
     text-decoration: underline;
@@ -174,7 +200,7 @@ hr {
 
 .home span
 {
-	font-family: 'Andantino script', arial;
+	font-family: 'Andantino script', 'MonotypeCursiva', "Constantia";
 	font-size: 27px;
 }
 
@@ -507,7 +533,12 @@ img:hover
     
     header a {
         width: 161px;
-        margin: 0px 10px 0px 0px;
+        margin: 0 10px 0 0;
+    }
+
+    .menu-item ul {
+        width: 95%;
+        margin:0 0 0 -40%;
     }
 
     .menu-item ul li a
@@ -522,9 +553,17 @@ img:hover
 
     nav.menu .menu-item.separator {
         display: none;
-        height: 0px;
+        height: 0;
     }
-    
+
+    .slide {
+        position: relative;
+        margin: 0 auto;
+        width: 98%;
+    }
+
+
+
     .home img {
         width: 100%;
         display: inline-block;

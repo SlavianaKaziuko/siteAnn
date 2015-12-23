@@ -22,7 +22,9 @@ $(function () {
 $(document).ready(function() {
     //Обработка нажатия на кнопку "Вверх"
     $("#up").on("click", scrollUp);
-
+    $('.carousel').carousel({
+        interval: 3200
+    });
 
     bindEvents();
 });
@@ -32,18 +34,28 @@ function bindEvents() {
     $(window).on('hashchange', hashChanged);
     //$("#services>li>h3").off("click");
     //$("#services>li>h3").on("click", expandService);
-    $('nav .menu-item').off('click', showSubmenu);
-    $('nav .menu-item').on('click', showSubmenu);
-    $('nav .menu-item').hover(showSubmenu()
-        //function () {
-        //    //показать подменю
-        //    $('ul', this).slideDown(100);
-        //},
-        //function () {
-        //    //скрыть подменю
-        //    $('ul', this).slideUp(100);
-        //}
-    );    hashChanged();
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('nav .menu-item').off('click');
+        $('nav .menu-item').on('click', function() {});
+        $('nav .menu-item').hover(
+            function() {
+                //показать подменю
+                $('ul', this).slideDown(100);
+                $('ul', this).addClass("expanded");
+            },
+            function() {
+                //скрыть подменю
+                $('ul', this).slideUp(100);
+                $('ul', this).removeClass("expanded");
+            }
+        );
+    } else {
+        $('nav .menu-item').off('click');
+        $('nav .menu-item').on('click', showSubmenu);
+        $('nav .menu-item a').on('click', function(e) { e.preventDefault(); });
+    }
+
+    hashChanged();
     $(window).off('popstate');
     $(window).on('popstate', function () {
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

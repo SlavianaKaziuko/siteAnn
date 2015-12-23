@@ -3,6 +3,12 @@
     ViewBag.Title = "Портфолио";
     Layout = ViewBag.Layout;
 }
+@section meta
+{
+    <meta name="keywords" content="Портфолио Детский Семейный Свадебный Фотограф Могилев">
+    <meta name="description" content="Могилев детский, семейный и свадебный Фотограф Анна Протасова">
+}
+
 <div id="title">@ViewBag.Title</div>  
 
 @if (ViewBag.Photos != null)

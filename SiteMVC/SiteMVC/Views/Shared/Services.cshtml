@@ -11,7 +11,9 @@
     <a href="#@service.Id">
         <h3>@service.Name</h3>
     </a>
+@{Html.RenderAction("ServiceMenu", "ServiceMenu");}
 }*@
+
 
 <ul id="services">
     @foreach (Service service in ViewBag.ServiceList)

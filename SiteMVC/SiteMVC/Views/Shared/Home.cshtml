@@ -1,26 +1,60 @@
-﻿@{
+﻿@using SiteMVC.Models
+@{
     ViewBag.Title = "Фотограф Анна Протасова";
     Layout = "~/Views/_Layout.cshtml";
 }
+@section meta
+{
+    <meta name="keywords" content="Детский Семейный Свадебный Фотограф, Могилев">
+    <meta name="description" content="Могилев детский, семейный и свадебный Фотограф Анна Протасова">
+}
+@{
+    var flag = true;
+}
+
 <div id="title">@ViewBag.Title</div>  
 
 <div class="home">
-    <img alt="Ann" src="/Content/images/Ann.jpg" />
-	<p>
-        <span>З</span>дравствуйте и добро пожаловать на мой сайт! 
-		<br/>
-		Меня зовут <span>Анна</span>, и я очень люблю фотографировать. 
-		<br/>
-		<br/>
-		Мне нравится видеть счастье в кадре и дарить его окружающим. 
-		<br/><br/>
-		Нахожу вдохновение в своей семье, в знакомствах с новыми открытыми и интересными людьми, музыке и во всем прекрасном, что меня окружает.
-		<br/><br/>
-		Живу в Могилеве, но всегда готова улететь хоть на край света ради красивых кадров.
-		<br/><br/>
-		Если Вам интересно то, что я делаю, и Вы хотели бы со мной поработать - 
-		@Ajax.ActionLink("смело пишите мне)", "Contacts", "Contacts", new { }, new AjaxOptions { UpdateTargetId = "container" }, new { id = "updated-container" })
-	</p>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3200">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @for (var i = 0; i < ViewBag.PhotosCount; i++)
+            {
+                if (flag)
+                {
+                    @:<li data-target="#myCarousel" data-slide-to="@i" class="active"></li>
+                    flag = false;
+                }
+                else
+                {
+                    @:<li data-target="#myCarousel" data-slide-to="@i"></li>
+                }
+            }
+        </ol>
 
+        <!-- Wrapper for slides -->
+        @{
+            flag = true;
+        }
+
+        <div class="carousel-inner" role="listbox">
+            @foreach (PhotoItem item in ViewBag.Photos)
+            {
+                if (flag)
+                {
+                    @:<div class="item active">
+                    @:<img src="@item.Path" alt="@item.Name">
+                    @:</div>
+                    flag = false;
+                }
+                else
+                {
+                    @:<div class="item">
+                    @:<img src="@item.Path" alt="@item.Name">
+                    @:</div>
+                }
+            }
+        </div>
+    </div>
 </div>
 
