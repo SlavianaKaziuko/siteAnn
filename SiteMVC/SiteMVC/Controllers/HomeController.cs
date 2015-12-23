@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Web.Mvc;
-using SiteMVC.Constants;
 using SiteMVC.Models;
 
 namespace SiteMVC.Controllers
