@@ -136,29 +136,64 @@ nav.menu .menu-item.separator
 }
 
 .slide {
-    margin: 0 auto;
     width: 80%;
+    margin: 0 auto;
+    height: 500px;
+    overflow: visible;
 }
 
 .slide .item img {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: inherit;
+}
 .carousel-inner .item {
-    transition-delay: 10s;
-  position: relative;
-  z-index: 0;
-  opacity: 0;
-  -moz-transition: opacity linear 0.5s;
-  -o-transition: opacity linear 0.5s;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+    z-index: 0;
+    opacity: 0;
+        
+    -moz-transition: opacity ease-in-out 2s;
+    -o-transition: opacity ease-in-out 2s;
+    -webkit-transition: opacity ease-in-out 2s;
+    transition:  opacity ease-in-out 2s;
+}
+
+.carousel-inner .item.next.left {
+    opacity: 1;
+    z-index: 1;
+    display: block;
+       
+    /*-moz-transition: opacity ease-in-out 2s;
+    -o-transition: opacity ease-in-out 2s;
+    -webkit-transition: opacity ease-in-out 2s;
+    transition:  opacity ease-in-out 2s;*/
+
 }
 
 .carousel-inner .item.active {
-  z-index: 1;
-  opacity: 1;
+    opacity: 1;
+    z-index: 2;
+    /*-moz-transition: opacity ease-in-out 2s;
+    -o-transition: opacity ease-in-out 2s;
+    -webkit-transition: opacity ease-in-out 2s;
+    transition:  opacity ease-in-out 2s;
+    display: block;*/
+
+}
+.carousel-inner .item.active.left {
+    z-index: 1;
+    opacity: 0.2;
+    -moz-transition: opacity ease-in-out 2s;
+    -o-transition: opacity ease-in-out 2s;
+    -webkit-transition: opacity ease-in-out 2s;
+    transition:  opacity ease-in-out 2s;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    display: block;
 }
 
 a {

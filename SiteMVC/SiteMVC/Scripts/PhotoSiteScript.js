@@ -23,7 +23,7 @@ $(document).ready(function() {
     //Обработка нажатия на кнопку "Вверх"
     $("#up").on("click", scrollUp);
     $('.carousel').carousel({
-        interval: 3200
+        interval: 4000
     });
 
     bindEvents();
