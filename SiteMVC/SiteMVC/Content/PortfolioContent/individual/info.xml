@@ -3,4 +3,8 @@
   <Name>Индивидуальная фотосъемка</Name>
   <Description>
   </Description>
+    <AlonePhotos>
+    1.jpg
+    6.jpg
+  </AlonePhotos>
 </AlbumInfo>
