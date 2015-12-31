@@ -62,30 +62,79 @@ namespace SiteMVC.Controllers
 
         public ActionResult Album(string path)
         {
+            if (path.Contains('/'))
+            {
+                path = path.Replace('/', '\\');
+            }
+
             var photoDir = new DirectoryInfo(Server.MapPath("~/") + "\\Content\\PortfolioContent\\" + path);
             var infoFile = new XmlDocument();
-            infoFile.Load(photoDir.FullName + @"\info.xml");
-
-            var nameElem = infoFile.GetElementsByTagName("Name").Item(0);
+            var alonePhotos = string.Empty;
             var nameOrig = string.Empty;
-            if (nameElem != null)
+            var desc = string.Empty;
+            if (System.IO.File.Exists(photoDir.FullName + @"\info.xml"))
             {
-                nameOrig = nameElem.InnerText;
+                infoFile.Load(photoDir.FullName + @"\info.xml");
+
+                var nameElem = infoFile.GetElementsByTagName("Name").Item(0);
+                if (nameElem != null)
+                {
+                    nameOrig = nameElem.InnerText;
+                }
+
+                var descElem = infoFile.GetElementsByTagName("Description").Item(0);
+                if (descElem != null)
+                {
+                    desc = descElem.InnerText;
+                }
+
+                var aloneElem = infoFile.GetElementsByTagName("AlonePhotos").Item(0);
+                if (aloneElem != null)
+                {
+                    alonePhotos = aloneElem.InnerText;
+                }
+            }
+            else
+            {
+                nameOrig = photoDir.Name;
             }
 
             ViewBag.Name = nameOrig;
-
-            var descElem = infoFile.GetElementsByTagName("Description").Item(0);
-            var desc = string.Empty;
-            if (descElem != null)
-            {
-                desc = descElem.InnerText;
-            }
-
             ViewBag.Description = desc;
 
+            var album = new List<AlbumItem>();
+            foreach (var directoryInfo in photoDir.GetDirectories().Where(dir => dir.Name != "[Originals]"))
+            {
+                var name = string.Empty;
+                var infoFileAlbum = new XmlDocument();
+                var pathAlbum = photoDir.Name + "/" + directoryInfo.Name;
+                if (System.IO.File.Exists(directoryInfo.FullName + @"\info.xml"))
+                {
+                    infoFileAlbum.Load(directoryInfo.FullName + @"\info.xml");
+
+                    var nameElemAlbum = infoFileAlbum.GetElementsByTagName("Name").Item(0);
+                    if (nameElemAlbum != null)
+                    {
+                        name = nameElemAlbum.InnerText;
+                    }
+                }
+                else
+                {
+                    name = directoryInfo.Name;
+                }
+
+                album.Add(new AlbumItem
+                {
+                    Name = name,
+                    Path = pathAlbum,
+                    MainPhotoPath = "/Content/PortfolioContent/" + photoDir.Name + "\\" + directoryInfo.Name + "\\0.jpg"
+                });
+            }
+
+            ViewBag.Album = album;
+
             var photos = new List<PhotoItem>();
-            foreach (var photoItem in photoDir.GetFiles("*.jpg"))
+            foreach (var photoItem in photoDir.GetFiles("*.jpg").Where(photoItem => photoItem.Name != "0.jpg"))
             {
                 using (var objImage = Image.FromFile(photoItem.FullName))
                 {
@@ -103,7 +152,7 @@ namespace SiteMVC.Controllers
                     photos.Add(new PhotoItem
                     {
                         Name = photoItem.Name,
-                        Path = "/Content/PortfolioContent/" + photoDir.Name + "/" + photoItem.Name,
+                        Path = "/Content/PortfolioContent/" + path + "/" + photoItem.Name,
                         Width = width,
                         Height = height,
                         Size = width + "x" + height,
@@ -119,21 +168,8 @@ namespace SiteMVC.Controllers
             var firstOrDefault = photos.FirstOrDefault();
             if (firstOrDefault != null && (1.0 * firstOrDefault.Height / firstOrDefault.Width < 0.8))
             {
-                firstOrDefault.Style = "photo-alone";
+                firstOrDefault.Style = "photo-alone my";
             }
-
-            //if (!photos.Exists(i => i.Style == "photo-vertical"))
-            //{
-            //    var rnd = new Random();
-            //    var index = rnd.Next(1, photos.Count - 2);
-            //    var b = galleryWidth * photos[index].Height / (photos[index + 1].Height * photos[index].Width + photos[index].Height * photos[index + 1].Width);
-            //    var a = b * photos[index + 1].Height / photos[index].Height;
-
-            //    photos[index].ImageSize = "width: " + (int)(photos[index].Width * a) + "px;";
-            //    photos[index].Style = "photo-item";
-            //    photos[index + 1].ImageSize = "width: " + (int)(photos[index + 1].Width * b) + "px;";
-            //    photos[index + 1].Style = "photo-item";
-            //}
 
             for (var i = 1; i < photos.Count - 2; i++)
             {
@@ -154,9 +190,14 @@ namespace SiteMVC.Controllers
                 }
             }
 
+            foreach (var photoItem in photos.Where(photoItem => alonePhotos.Contains(photoItem.Name)))
+            {
+                photoItem.Style = "photo-alone my";
+            }
+
             for (var i = 1; i < photos.Count; i++)
             {
-                if (photos[i - 1].Style != "photo-alone")
+                if ((photos[i - 1].Style != "photo-alone" && alonePhotos == string.Empty) || (photos[i - 1].Style != "photo-alone my" && photos[i].Style != "photo-alone my"))
                 {
                     var b = galleryWidth * photos[i].Height / (photos[i - 1].Height * photos[i].Width + photos[i].Height * photos[i - 1].Width);
                     var a = b * photos[i - 1].Height / photos[i].Height;
@@ -167,15 +208,9 @@ namespace SiteMVC.Controllers
                     photos[i - 1].Style = "photo-item";
                     i++;
                 }
-
-                /*if (photos[i].Style == "photo-horizontal" && i + 1 < photos.Count && photos[i + 1].Style == "photo-horizontal")
-                {
-                    i++;
-                }*/
             }
 
             ViewBag.Photos = photos;
-
 
             if (Request.IsAjaxRequest())
             {

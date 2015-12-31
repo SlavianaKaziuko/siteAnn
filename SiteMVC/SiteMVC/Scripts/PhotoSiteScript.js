@@ -59,14 +59,15 @@ function bindEvents() {
     $(window).off('popstate');
     $(window).on('popstate', function () {
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            location.reload();
+            if (window.history.previous.href != null && window.history.previous.href.contains("#")) {
+                location.reload();
+            }
         }
     });
 }
 
 function hashChanged() {
     if ($(top.location.hash).length > 0) {
-        $(top.location.hash).find("h3").trigger("click");
         $("body,html").animate({ "scrollTop": $(top.location.hash).offset().top }, 500);
     }
 }
