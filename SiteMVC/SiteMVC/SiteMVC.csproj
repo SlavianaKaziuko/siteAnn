@@ -171,9 +171,8 @@
     <Content Include="Content\images\logo_new.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\images\logo_vk.jpg" />
-    <Content Include="Content\images\logo_vk.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\images\post_vk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\mywed.png" />
     <Content Include="Content\PhotoSiteStyle.css" />
@@ -237,11 +236,7 @@
     <Content Include="Content\PortfolioContent\individual\0.jpg" />
     <Content Include="Content\PortfolioContent\individual\info.xml" />
     <Content Include="Content\PortfolioContent\lovestory\0.jpg" />
-    <Content Include="Content\PortfolioContent\lovestory\3.jpg" />
-    <Content Include="Content\PortfolioContent\lovestory\ej3aVdG0bDA.jpg" />
     <Content Include="Content\PortfolioContent\lovestory\info.xml" />
-    <Content Include="Content\PortfolioContent\lovestory\SY_LK1J6fKk.jpg" />
-    <Content Include="Content\PortfolioContent\lovestory\WuVvrjCl6GI.jpg" />
     <Content Include="Content\PortfolioContent\maternity\0.jpg" />
     <Content Include="Content\PortfolioContent\maternity\info.xml" />
     <Content Include="Content\PortfolioContent\newborn\0.jpg" />
@@ -318,7 +313,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\News.cshtml" />
     <Content Include="Views\Shared\error.cshtml" />
     <Content Include="Views\Shared\ServiceMenu.cshtml" />
