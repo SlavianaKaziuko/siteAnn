@@ -22,6 +22,7 @@ namespace SiteMVC.Controllers
             foreach (var directoryInfo in portfolioDir.GetDirectories().Where(dir => dir.Name != "[Originals]"))
             {
                 var infoFile = new XmlDocument();
+
                 var path = directoryInfo.Name;
                 if (!System.IO.File.Exists(directoryInfo.FullName + @"\info.xml")) continue;
                 infoFile.Load(directoryInfo.FullName + @"\info.xml");
