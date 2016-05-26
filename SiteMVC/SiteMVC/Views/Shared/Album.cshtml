@@ -184,6 +184,7 @@
                             return false;
                         }
                         captionEl.children[0].innerHTML = item.title + '<br/><small>Photo: ' + item.author + '</small>';
+						ga('send', 'event', 'image', 'click', 'image click', item.title);
                         return true;
                     }
 

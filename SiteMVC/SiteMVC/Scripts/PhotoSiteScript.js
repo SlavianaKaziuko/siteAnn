@@ -163,4 +163,17 @@ function expandService(event) {
     return false;
 }
 
+// Function to load and initiate the Analytics tracker
+function gaTracker(id){
+  $.getScript('//www.google-analytics.com/analytics.js'); // jQuery shortcut
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', id, 'auto');
+  ga('send', 'pageview');
+}
+		  
 
+// Function to track a virtual page view
+function gaTrack(path, title) {
+  ga('set', { page: path, title: title });
+  ga('send', 'pageview');
+}
